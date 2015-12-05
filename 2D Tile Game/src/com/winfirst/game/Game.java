@@ -45,7 +45,7 @@ public class Game implements Runnable{
 		  
 		  g.clearRect(0, 0, width, height);
 		  
-		  g.fillRect(0, 0, width, height);
+		  
 		  
 		  bs.show();
 		  g.dispose();
