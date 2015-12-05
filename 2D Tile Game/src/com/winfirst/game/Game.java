@@ -2,11 +2,9 @@ package com.winfirst.game;
 
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
 
+import com.winfirst.graphics.Assets;
 import com.winfirst.graphics.Display;
-import com.winfirst.graphics.ImageLoader;
-import com.winfirst.graphics.SpriteSheet;
 
 public class Game implements Runnable{
 	
@@ -29,6 +27,7 @@ public class Game implements Runnable{
 	
 	private void init(){
 		display = new Display(title, width, height);
+		Assets.init();
 	}
 	
 	public void tick(){
@@ -47,7 +46,7 @@ public class Game implements Runnable{
 		  
 		  g.clearRect(0, 0, width, height);
 		  
-		  
+		  g.drawImage(Assets.player, 10, 10, null);
 		  
 		  bs.show();
 		  g.dispose();

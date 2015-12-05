@@ -1,4 +1,4 @@
-package com.winfirst.graphics;
+package com.winfirst.main;
 
 import com.winfirst.game.Game;
 
