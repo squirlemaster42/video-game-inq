@@ -5,6 +5,7 @@ import java.awt.image.BufferStrategy;
 
 import com.winfirst.graphics.Assets;
 import com.winfirst.graphics.Display;
+import com.winfirst.input.KeyManager;
 import com.winfirst.states.GameState;
 import com.winfirst.states.MainMenu;
 import com.winfirst.states.State;
@@ -26,23 +27,30 @@ public class Game implements Runnable{
 	private State gameState;
 	private State menuState;
 	
+	//Input
+	private KeyManager keyManager;
+	
 	public Game(String title, int width, int height){
 		this.width = width;
 		this.height = height;
 		this.title = title;
+		keyManager = new KeyManager();
 	}
 	
 	private void init(){
 		display = new Display(title, width, height);
+		display.getFrame().addKeyListener(keyManager);
 		Assets.init();
 		
-		gameState = new GameState();
-		menuState = new MainMenu();
+		gameState = new GameState(this);
+		menuState = new MainMenu(this);
 		State.setState(gameState);
 	}
 	
 	
 	public void tick(){
+		keyManager.tick();
+		
 		if(State.getState() != null){
 			State.getState().tick();
 		}
@@ -101,6 +109,10 @@ public class Game implements Runnable{
 		} 
 		
 		stop();
+	}
+	
+	public KeyManager getKeyManager(){
+		return keyManager;
 	}
 	
 	public synchronized void start(){

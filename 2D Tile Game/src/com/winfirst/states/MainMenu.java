@@ -2,12 +2,13 @@ package com.winfirst.states;
 
 import java.awt.Graphics;
 
+import com.winfirst.game.Game;
 import com.winfirst.graphics.Assets;
 
 public class MainMenu extends State{
 
-	public MainMenu(){
-		
+	public MainMenu(Game game){
+		super(game);
 	}
 	
 	@Override
