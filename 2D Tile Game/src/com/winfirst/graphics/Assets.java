@@ -14,7 +14,7 @@ public class Assets {
 		
 		grass = ground.crop(0, 0, width, height);
 		dirt = ground.crop(width, 0, width, height);
-		player = character.crop(0, 0, 14, 44);
+		player = character.crop(0, 0, 15, 44);
 		tree = character.crop(25, 3, 34, 41);
 		mainMenu = MainMenu.crop(0, 0, 640, 360);
 	}
