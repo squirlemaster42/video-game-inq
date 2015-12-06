@@ -3,12 +3,12 @@ package com.winfirst.game;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
-import com.winfirst.graphics.Assets;
 import com.winfirst.graphics.Display;
 import com.winfirst.input.KeyManager;
 import com.winfirst.states.GameState;
 import com.winfirst.states.MainMenu;
 import com.winfirst.states.State;
+import com.winfirst.tile.Assets;
 
 public class Game implements Runnable{
 	

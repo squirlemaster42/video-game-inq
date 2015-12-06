@@ -3,7 +3,7 @@ package com.winfirst.states;
 import java.awt.Graphics;
 
 import com.winfirst.game.Game;
-import com.winfirst.graphics.Assets;
+import com.winfirst.tile.Assets;
 
 public class MainMenu extends State{
 

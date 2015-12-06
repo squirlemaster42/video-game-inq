@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import com.winfirst.entity.Player;
 import com.winfirst.game.Game;
+import com.winfirst.tile.Tile;
 
 public class GameState extends State{
 	
