@@ -6,6 +6,7 @@ import java.awt.image.BufferStrategy;
 import com.winfirst.graphics.Assets;
 import com.winfirst.graphics.Display;
 import com.winfirst.states.GameState;
+import com.winfirst.states.MainMenu;
 import com.winfirst.states.State;
 
 public class Game implements Runnable{
@@ -23,6 +24,7 @@ public class Game implements Runnable{
 	
 	//States
 	private State gameState;
+	private State menuState;
 	
 	public Game(String title, int width, int height){
 		this.width = width;
@@ -35,6 +37,7 @@ public class Game implements Runnable{
 		Assets.init();
 		
 		gameState = new GameState();
+		menuState = new MainMenu();
 		State.setState(gameState);
 	}
 	
