@@ -7,7 +7,7 @@ import com.winfirst.graphics.SpriteSheet;
 
 public class Assets {
 	
-	public static BufferedImage player, tree, dirt, grass, mainMenu, rock;
+	public static BufferedImage player, tree, dirt, grass, mainMenu, rock, stoneBrick;
 	private static final int width = 32, height = 32;
 	
 	public static void init(){
@@ -20,6 +20,7 @@ public class Assets {
 		player = character.crop(0, 0, 16, 50);
 		mainMenu = MainMenu.crop(0, 0, 640, 360);
 		rock = ground.crop(width * 2, 0, width, height);
+		stoneBrick = ground.crop(width * 3, 0, width, height);
 	}
 
 }
