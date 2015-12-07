@@ -17,7 +17,7 @@ public class Assets {
 		
 		grass = ground.crop(0, 0, width, height);
 		dirt = ground.crop(width, 0, width, height);
-		player = character.crop(0, 0, 16, 50);
+		player = character.crop(0, 0, 17, 50);
 		mainMenu = MainMenu.crop(0, 0, 640, 360);
 		rock = ground.crop(width * 2, 0, width, height);
 		stoneBrick = ground.crop(width * 3, 0, width, height);
