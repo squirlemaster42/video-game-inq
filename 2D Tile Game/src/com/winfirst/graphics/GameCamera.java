@@ -36,7 +36,7 @@ public class GameCamera {
 		return yOffset;
 	}
 
-	public void setyOffset(float yOffset) {
+	public void setyOffset(float yOffset) {                                                      
 		this.yOffset = yOffset;
 	}
 }
