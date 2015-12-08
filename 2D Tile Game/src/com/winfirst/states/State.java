@@ -2,14 +2,14 @@ package com.winfirst.states;
 
 import java.awt.Graphics;
 
-import com.winfirst.game.Game;
+import com.winfirst.utils.Handler;
 
 public abstract class State {
 	
-	protected Game game;
+	protected Handler handler;
 	
-	public State(Game game){
-		this.game = game;
+	public State(Handler handler){
+		this.handler = handler;
 	}
 	
 	public abstract void tick();

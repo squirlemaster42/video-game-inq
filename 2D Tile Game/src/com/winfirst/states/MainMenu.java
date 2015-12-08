@@ -2,13 +2,13 @@ package com.winfirst.states;
 
 import java.awt.Graphics;
 
-import com.winfirst.game.Game;
 import com.winfirst.tile.Assets;
+import com.winfirst.utils.Handler;
 
 public class MainMenu extends State{
 
-	public MainMenu(Game game){
-		super(game);
+	public MainMenu(Handler handler){
+		super(handler);
 	}
 	
 	@Override
