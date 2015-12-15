@@ -9,6 +9,7 @@ public class Assets {
 	
 	public static BufferedImage player, tree, dirt, grass, mainMenu, rock, stoneBrick;
 	private static final int width = 32, height = 32;
+	public static final int playerWidth = 13, playerHeight = 36;
 	
 	public static void init(){
 		SpriteSheet ground = new SpriteSheet(ImageLoader.loadImage("/textures/ground.png"));
@@ -17,7 +18,7 @@ public class Assets {
 		
 		grass = ground.crop(0, 0, width, height);
 		dirt = ground.crop(width, 0, width, height);
-		player = character.crop(0, 0, 17, 50);
+		player = character.crop(0, 0, playerWidth, playerHeight);
 		mainMenu = MainMenu.crop(0, 0, 640, 360);
 		rock = ground.crop(width * 2, 0, width, height);
 		stoneBrick = ground.crop(width * 3, 0, width, height);
