@@ -1,4 +1,4 @@
-#Welcome to the RPG-Gaame wiki!
+#Welcome to the RPG-Gaame README!
 
 This is a Java RPG game that hopes to integrate puzzles, a diverse storyline and many different characters.
 
