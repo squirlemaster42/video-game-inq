@@ -22,28 +22,28 @@ public class Assets {
 		SpriteSheet character = new SpriteSheet(ImageLoader.loadImage("/textures/Char.png"));
 		
 		playerDown = new BufferedImage[4];
-		playerDown[0] = character.crop(0, playerHeight, playerWidth, playerHeight);
-		playerDown[1] = character.crop(0, 2 * playerHeight, playerWidth, playerHeight);
-		playerDown[2] = character.crop(0, 3 * playerHeight, playerWidth, playerHeight);
-		playerDown[3] = character.crop(0, 2 * playerHeight, playerWidth, playerHeight);
+		playerDown[0] = character.crop(0, 0, playerWidth, playerHeight);
+		playerDown[1] = character.crop(0, playerHeight, playerWidth, playerHeight);
+		playerDown[2] = character.crop(0, 2 * playerHeight, playerWidth, playerHeight);
+		playerDown[3] = character.crop(0, playerHeight, playerWidth, playerHeight);
 		
 		playerUp = new BufferedImage[4];
-		playerUp[0] = character.crop(playerWidth, playerHeight, playerWidth, playerHeight);
-		playerUp[1] = character.crop(playerWidth, 2 * playerHeight, playerWidth, playerHeight);
-		playerUp[2] = character.crop(playerWidth, 3 * playerHeight, playerWidth, playerHeight);
-		playerUp[3] = character.crop(playerWidth, 2 * playerHeight, playerWidth, playerHeight);
+		playerUp[0] = character.crop(playerWidth, 0, playerWidth, playerHeight);
+		playerUp[1] = character.crop(playerWidth, playerHeight, playerWidth, playerHeight);
+		playerUp[2] = character.crop(playerWidth, 2 * playerHeight, playerWidth, playerHeight);
+		playerUp[3] = character.crop(playerWidth, playerHeight, playerWidth, playerHeight);
 		
 		playerRight = new BufferedImage[4];
-		playerRight[0] = character.crop(2 * playerWidth, playerHeight, playerWidth, playerHeight);
-		playerRight[1] = character.crop(2 * playerWidth, 2 * playerHeight, playerWidth, playerHeight);
-		playerRight[2] = character.crop(2 * playerWidth, 3 * playerHeight, playerWidth, playerHeight);
-		playerRight[3] = character.crop(2 * playerWidth, 2 * playerHeight, playerWidth, playerHeight);
+		playerRight[0] = character.crop(2 * playerWidth, 0, playerWidth, playerHeight);
+		playerRight[1] = character.crop(2 * playerWidth, playerHeight, playerWidth, playerHeight);
+		playerRight[2] = character.crop(2 * playerWidth, 2 * playerHeight, playerWidth, playerHeight);
+		playerRight[3] = character.crop(2 * playerWidth, playerHeight, playerWidth, playerHeight);
 		
 		playerLeft = new BufferedImage[4];
-		playerLeft[0] = character.crop(3 * playerWidth, playerHeight, playerWidth, playerHeight);
-		playerLeft[1] = character.crop(3 * playerWidth, 2 * playerHeight, playerWidth, playerHeight);
-		playerLeft[2] = character.crop(3 * playerWidth, 3 * playerHeight, playerWidth, playerHeight);
-		playerLeft[3] = character.crop(3 * playerWidth, 2 * playerHeight, playerWidth, playerHeight);
+		playerLeft[0] = character.crop(3 * playerWidth, 0, playerWidth, playerHeight);
+		playerLeft[1] = character.crop(3 * playerWidth, playerHeight, playerWidth, playerHeight);
+		playerLeft[2] = character.crop(3 * playerWidth, 2 * playerHeight, playerWidth, playerHeight);
+		playerLeft[3] = character.crop(3 * playerWidth, playerHeight, playerWidth, playerHeight);
 		
 		grass = ground.crop(0, 0, width, height);
 		dirt = ground.crop(width, 0, width, height);
