@@ -2,6 +2,9 @@ package com.winfirst.world;
 
 import java.awt.Graphics;
 
+import com.winfirst.entity.EntityManager;
+import com.winfirst.entity.Player;
+import com.winfirst.entity.Tree;
 import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 import com.winfirst.utils.Utils;
@@ -13,13 +16,23 @@ public class World {
 	private int spawnX, spawnY;
 	private int[][] tiles;
 	
+	//Entities
+	private EntityManager entityManager;
+	
 	public World(Handler handler, String path){
 		this.handler = handler;
+		
+		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
+		entityManager.addEntity(new Tree(handler, 200, 200));
+		
 		loadWorld(path);
+		
+		entityManager.getPlayer().setX(spawnX);
+		entityManager.getPlayer().setY(spawnY);
 	}
 	
 	public void tick(){
-		
+		entityManager.tick();
 	}
 	
 	public void render(Graphics g){
@@ -34,6 +47,9 @@ public class World {
 						(int) (y * Tile.TILEHEIGHT - handler.getGameCamera().getyOffset()));
 			}
 		}
+		
+		//Entities
+		entityManager.render(g);
 	}
 	
 	public Tile getTile(int x, int y){

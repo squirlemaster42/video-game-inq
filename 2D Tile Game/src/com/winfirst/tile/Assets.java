@@ -50,6 +50,7 @@ public class Assets {
 		mainMenu = MainMenu.crop(0, 0, 640, 360);
 		rock = ground.crop(width * 2, 0, width, height);
 		stoneBrick = ground.crop(width * 3, 0, width, height);
+		tree = ground.crop(0, height, width, height);
 	}
 
 }
