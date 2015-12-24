@@ -84,11 +84,16 @@ public class World {
 		}
 	}
 	
+	//Getters and Setters
 	public int getWidth(){
 		return width;
 	}
 	
 	public int getHeight(){
 		return height;
+	}
+
+	public EntityManager getEntityManager() {
+		return entityManager;
 	}
 }
