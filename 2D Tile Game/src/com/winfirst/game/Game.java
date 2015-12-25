@@ -14,8 +14,6 @@ import com.winfirst.utils.Handler;
 
 public class Game implements Runnable{
 	
-	//3:20
-	
 	private Display display;
 	
 	private int width, height;

@@ -12,6 +12,7 @@ public class Assets {
 	public static BufferedImage[] playerUp;
 	public static BufferedImage[] playerLeft;
 	public static BufferedImage[] playerRight;
+	public static BufferedImage[] playerStop;
 	
 	private static final int width = 32, height = 32;
 	public static final int playerWidth = 13, playerHeight = 36;
@@ -44,6 +45,9 @@ public class Assets {
 		playerLeft[1] = character.crop(3 * playerWidth, playerHeight, playerWidth, playerHeight);
 		playerLeft[2] = character.crop(3 * playerWidth, 2 * playerHeight, playerWidth, playerHeight);
 		playerLeft[3] = character.crop(3 * playerWidth, playerHeight, playerWidth, playerHeight);
+		
+		playerStop = new BufferedImage[1];
+		playerStop[0] = character.crop(0, playerHeight, playerWidth, playerHeight);
 		
 		grass = ground.crop(0, 0, width, height);
 		dirt = ground.crop(width, 0, width, height);

@@ -10,7 +10,7 @@ import com.winfirst.utils.Handler;
 public class Player extends Creature{
 	
 	//Animations
-	private Animation animDown, animLeft, animRight, animUp;
+	private Animation animDown, animLeft, animRight, animUp, animStop;
 	
 	public Player(Handler handler, float x, float y) {
 		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
@@ -25,6 +25,7 @@ public class Player extends Creature{
 		animLeft = new Animation(500, Assets.playerLeft);
 		animRight = new Animation(500, Assets.playerRight);
 		animUp = new Animation(500, Assets.playerUp);
+		animStop = new Animation(500, Assets.playerStop);
 	}
 
 	@Override
@@ -34,6 +35,7 @@ public class Player extends Creature{
 		animLeft.tick();
 		animRight.tick();
 		animUp.tick();
+		animStop.tick();
 		
 		//Movement
 		getInput();
@@ -76,8 +78,10 @@ public class Player extends Creature{
 			return animRight.getCurrentFrame();
 		}else if(yMove < 0){
 			return animUp.getCurrentFrame();
-		}else{
+		}else if(yMove > 0){
 			return animDown.getCurrentFrame();
+		}else{
+			return animStop.getCurrentFrame();
 		}
 	}
 }
