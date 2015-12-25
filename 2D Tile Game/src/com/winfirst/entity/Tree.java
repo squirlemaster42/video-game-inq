@@ -12,9 +12,9 @@ public class Tree extends StaticEntity{
 	public Tree(Handler handler, float x, float y) {
 		super(handler, x, y, Tile.TILEWIDTH * 3, Tile.TILEHEIGHT * 3);
 		
-		bounds.x = 60;
+		bounds.x = 78;
 		bounds.y = (int) (height / 1.5f);
-		bounds.width = 54;
+		bounds.width = 18;
 		bounds.height = 64;
 	}
 

@@ -1,7 +1,7 @@
 package com.winfirst.main;
 
 import com.winfirst.game.Game;
-import com.winfirst.sound.Sound;
+import com.winfirst.settings.SettingsGUI;
 
 public class Launcher {
 	

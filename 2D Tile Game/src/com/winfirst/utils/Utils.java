@@ -32,4 +32,9 @@ public class Utils {
 			return 0;
 		}
 	}
+	
+	public String[] splitStringAtSpace(String s){
+		String[] split = s.split(" ");
+		return split;
+	}
 }
