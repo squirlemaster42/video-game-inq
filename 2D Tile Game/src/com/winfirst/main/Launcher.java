@@ -13,9 +13,9 @@ public class Launcher {
 	/* 
 	 * To do:
 	 * Finish Settings GUI and implement
-	 * Complete Render Order
 	 * 
 	 * Done:
+	 * Complete Render Order
 	 * Fixed Tree Bounds
 	 * Added Settings GUI class
 	 * Added No Movement Animation

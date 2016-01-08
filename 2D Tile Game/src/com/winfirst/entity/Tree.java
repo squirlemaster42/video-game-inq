@@ -1,6 +1,5 @@
 package com.winfirst.entity;
 
-import java.awt.Color;
 import java.awt.Graphics;
 
 import com.winfirst.tile.Assets;
