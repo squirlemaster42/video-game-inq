@@ -6,8 +6,11 @@ import com.winfirst.settings.SettingsGUI;
 public class Launcher {
 	
 	public static void main(String[] args) {
-		Game game = new Game("RPG Game", 720, 480);
-		game.start();
+		SettingsGUI settings = new SettingsGUI(300, 300);
+		settings.makeSettingsGui();
+		
+//		Game game = new Game("RPG Game", 720, 480);
+//		game.start();
 	}
 	
 	/* 
@@ -16,8 +19,5 @@ public class Launcher {
 	 * Complete Render Order
 	 * 
 	 * Done:
-	 * Fixed Tree Bounds
-	 * Added Settings GUI class
-	 * Added No Movement Animation
 	 */
 }
