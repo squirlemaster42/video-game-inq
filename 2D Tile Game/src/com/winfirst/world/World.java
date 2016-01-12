@@ -1,6 +1,7 @@
 package com.winfirst.world;
 
 import java.awt.Graphics;
+import java.util.concurrent.ThreadLocalRandom;
 
 import com.winfirst.entity.EntityManager;
 import com.winfirst.entity.Player;
@@ -24,6 +25,11 @@ public class World {
 		
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
 		entityManager.addEntity(new Tree(handler, 200, 200));
+		
+		for(int i = 0; i < 5; i++) {
+			entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 35, ThreadLocalRandom.current().nextInt(1, 22) * 32));
+		}
+		
 		
 		loadWorld(path);
 		
