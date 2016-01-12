@@ -6,11 +6,11 @@ import com.winfirst.settings.SettingsGUI;
 public class Launcher {
 	
 	public static void main(String[] args) {
-		SettingsGUI settings = new SettingsGUI(300, 300);
-		settings.makeSettingsGui();
+//		SettingsGUI settings = new SettingsGUI(300, 300);
+//		settings.makeSettingsGui();
 		
-//		Game game = new Game("RPG Game", 720, 480);
-//		game.start();
+		Game game = new Game("RPG Game", 720, 480);
+		game.start();
 	}
 	
 	/* 
