@@ -9,7 +9,7 @@ public class Launcher {
 //		SettingsGUI settings = new SettingsGUI(300, 300);
 //		settings.makeSettingsGui();
 		
-		Game game = new Game("RPG Game", 720, 480);
+		Game game = new Game("RPG Game", 1280, 720);
 		game.start();
 	}
 	
