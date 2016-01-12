@@ -27,7 +27,7 @@ public class World {
 		entityManager.addEntity(new Tree(handler, 200, 200));
 		
 		for(int i = 0; i < 5; i++) {
-			entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 35, ThreadLocalRandom.current().nextInt(1, 22) * 32));
+			entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
 		}
 		
 		
