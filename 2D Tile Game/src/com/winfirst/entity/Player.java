@@ -75,6 +75,11 @@ public class Player extends Creature{
 			
 		if(handler.getKeyManager().left)
 			xMove = -speed;
+		
+		if(handler.getKeyManager().r){
+			this.setX(100);
+			this.setY(100);
+		}
 	}
 
 	@Override
