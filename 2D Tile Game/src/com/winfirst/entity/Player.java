@@ -50,15 +50,12 @@ public class Player extends Creature{
 		
 		if(handler.getKeyManager().up){
 			yMove = -speed;
-		}
-		if(handler.getKeyManager().down){
-			yMove = +speed;
-		}
-		if(handler.getKeyManager().left){
-			xMove = -speed;
-		}
-		if(handler.getKeyManager().right){
+		}else if(handler.getKeyManager().right){
 			xMove = +speed;
+		}else if(handler.getKeyManager().left){
+			xMove = -speed;
+		}else{
+			yMove = +speed;
 		}
 	}
 
@@ -79,8 +76,6 @@ public class Player extends Creature{
 			return animRight.getCurrentFrame();
 		}else if(yMove < 0){
 			return animUp.getCurrentFrame();
-		}else if(yMove > 0){
-			return animDown.getCurrentFrame();
 		}else{
 			return animStop.getCurrentFrame();
 		}
