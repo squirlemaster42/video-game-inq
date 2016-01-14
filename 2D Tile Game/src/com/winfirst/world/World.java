@@ -24,11 +24,11 @@ public class World {
 		this.handler = handler;
 		
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
-		entityManager.addEntity(new Tree(handler, 200, 200));
+		//entityManager.addEntity(new Tree(handler, 200, 200));
 		
-		for(int i = 0; i < 5; i++) {
-			entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
-		}
+		//for(int i = 0; i < 5; i++) {
+			//entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
+		//}
 		
 		
 		loadWorld(path);

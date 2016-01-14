@@ -12,6 +12,7 @@ public class Player extends Creature{
 	
 	//Animations
 	private Animation animDown, animLeft, animRight, animUp, animStop;
+	private int jumpCount = 0;
 	
 	public Player(Handler handler, float x, float y) {
 		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
@@ -48,15 +49,23 @@ public class Player extends Creature{
 		xMove = 0;
 		yMove = 0;
 		
-		if(handler.getKeyManager().up){
-			yMove = -speed;
-		}else if(handler.getKeyManager().right){
-			xMove = +speed;
-		}else if(handler.getKeyManager().left){
-			xMove = -speed;
+		if(handler.getKeyManager().space){
+			if(jumpCount < 6){
+				yMove = -speed;
+				jumpCount += 1;
+			}else{
+				yMove = +jumpCount * 6;
+				jumpCount = 0;
+			}
 		}else{
 			yMove = +speed;
 		}
+		
+	    if(handler.getKeyManager().right)
+			xMove = +speed;
+			
+		if(handler.getKeyManager().left)
+			xMove = -speed;
 	}
 
 	@Override
