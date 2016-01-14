@@ -51,10 +51,14 @@ public class Player extends Creature{
 		
 		if(handler.getKeyManager().space){
 			if(jumpCount < 6){
-				yMove = -speed;
+				yMove =- speed;
 				jumpCount += 1;
 			}else{
-				yMove = +jumpCount * 6;
+				//Bugged, loop will not exit
+				while(!isTouchingTile(this, Tile.rockTile, (int) this.getX(), (int) this.getY())){
+					yMove =+ jumpCount;
+					yMove = 0;
+				}
 				jumpCount = 0;
 			}
 		}else{
