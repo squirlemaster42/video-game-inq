@@ -13,6 +13,7 @@ public class Player extends Creature{
 	//Animations
 	private Animation animDown, animLeft, animRight, animUp, animStop;
 	private int jumpCount = 0;
+	private boolean climb = true;
 	
 	public Player(Handler handler, float x, float y) {
 		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
@@ -50,16 +51,20 @@ public class Player extends Creature{
 		yMove = 0;
 		
 		if(handler.getKeyManager().space){
-			if(jumpCount < 6){
+			if(jumpCount < 32 && climb){
 				yMove =- speed;
 				jumpCount += 1;
-			}else{
-				//Bugged, loop will not exit
-				while(!isTouchingTile(this, Tile.rockTile, (int) this.getX(), (int) this.getY())){
-					yMove =+ jumpCount;
-					yMove = 0;
+				if(jumpCount == 32){
+					climb = false;
 				}
-				jumpCount = 0;
+			}else{
+				yMove =+ speed;
+				jumpCount--;
+				if(!(jumpCount == 0)){
+					climb = false;
+				}else{
+					climb = true;
+				}
 			}
 		}else{
 			yMove = +speed;
