@@ -50,31 +50,44 @@ public class Player extends Creature{
 		xMove = 0;
 		yMove = 0;
 		
+		System.out.println(jumpCount);
+		
 		if(handler.getKeyManager().space){
-			if(jumpCount < 32 && climb){
+			if(jumpCount <= 32){
 				yMove =- speed;
-				jumpCount += 1;
-				if(jumpCount == 32){
-					climb = false;
-				}
+				jumpCount++;
 			}else{
-				yMove =+ speed;
-				jumpCount--;
-				if(!(jumpCount == 0)){
-					climb = false;
+				if(!this.isTouchingTile(Tile.rockTile, (int) this.getX(), (int) this.getY())){
+					yMove =+ speed;
 				}else{
-					climb = true;
+					jumpCount = 0;
 				}
 			}
+			
+//			if(jumpCount < 32 && climb){
+//				yMove =- speed;
+//				jumpCount =+ 1;
+//				if(jumpCount == 32){
+//					climb = false;
+//				}
+//			}else{
+//				yMove =+ speed;
+//				jumpCount--;
+//				if(!(jumpCount == 0)){
+//					climb = false;
+//				}else{
+//					climb = true;
+//				}
+//			}
 		}else{
-			yMove = +speed;
+			yMove =+ speed;
 		}
 		
 	    if(handler.getKeyManager().right)
-			xMove = +speed;
+			xMove =+ speed;
 			
 		if(handler.getKeyManager().left)
-			xMove = -speed;
+			xMove =- speed;
 		
 		if(handler.getKeyManager().r){
 			this.setX(100);
