@@ -57,7 +57,7 @@ public class Player extends Creature{
 				yMove =- speed;
 				jumpCount++;
 			}else{
-				if(!this.isTouchingTile(Tile.rockTile, (int) (this.getX() - bounds.width) / Tile.TILEWIDTH, (int) (this.getY() - bounds.height) / Tile.TILEHEIGHT)){
+				if(!this.isTouchingTile(Tile.rockTile, (int) (this.getX() + bounds.width) + 1, (int) (this.getY() + bounds.height) + 1)){
 					yMove =+ speed;
 				}else{
 					jumpCount = 0;

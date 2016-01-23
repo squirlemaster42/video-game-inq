@@ -83,7 +83,7 @@ public abstract class Creature extends Entity{
 		return handler.getWorld().getTile(x, y);
 	}
 	
-	public boolean isTouchingTile(Tile t, int x, int y){
+	protected boolean isTouchingTile(Tile t, int x, int y){
 		if (this.getTouchingTile(x, y) == t){
 			return true;
 		} else {
