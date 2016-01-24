@@ -53,12 +53,6 @@ public class Player extends Creature{
 		int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.TILEHEIGHT;
 		int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
 		
-		System.out.println(jumpCount);		
-		System.out.println(ty);
-		System.out.println(tx);
-		System.out.println(!collisionWithTile((int) (x + bounds.x) / Tile.TILEWIDTH, ty) &&
-				!collisionWithTile((int) (x + bounds.x + bounds.width) / Tile.TILEWIDTH, ty));
-		
 		if(handler.getKeyManager().space){
 			if(jumpCount <= 32){
 				yMove =- speed;
