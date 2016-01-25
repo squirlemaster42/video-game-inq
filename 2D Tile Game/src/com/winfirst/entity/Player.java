@@ -55,13 +55,13 @@ public class Player extends Creature{
 		
 		if(handler.getKeyManager().space){
 			if(jumpCount <= 32){
-				yMove =- speed;
+				yMove -= speed;
 				jumpCount++;
 			}else{
 				
 				 
 				if(!collisionWithTile(tx, ty + 1)){
-					yMove =+ speed;
+					yMove += speed;
 				}else{
 					jumpCount = 0;
 				}
@@ -83,14 +83,14 @@ public class Player extends Creature{
 //				}
 //			}
 		}else{
-			yMove =+ speed;
+			yMove += speed;
 		}
 		
 	    if(handler.getKeyManager().right)
-			xMove =+ speed;
+			xMove += speed;
 			
 		if(handler.getKeyManager().left)
-			xMove =- speed;
+			xMove -= speed;
 		
 		if(handler.getKeyManager().r){
 			this.setX(100);
