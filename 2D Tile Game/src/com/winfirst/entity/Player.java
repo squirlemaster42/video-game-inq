@@ -12,8 +12,8 @@ public class Player extends Creature{
 	
 	//Animations
 	private Animation animDown, animLeft, animRight, animUp, animStop;
-	private int jumpCount = 0;
-	private boolean climb = true;
+	private int gravity = 20;
+	private boolean isJumping = false;
 	
 	public Player(Handler handler, float x, float y) {
 		super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
@@ -50,38 +50,26 @@ public class Player extends Creature{
 		xMove = 0;
 		yMove = 0;
 		
-		int ty = (int) (y + yMove + bounds.y + bounds.height) / Tile.TILEHEIGHT;
-		int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILEWIDTH;
+		System.out.println(gravity);
 		
 		if(handler.getKeyManager().space){
-			if(jumpCount <= 32){
-				yMove -= speed;
-				jumpCount++;
-			}else{
+			if(gravity > 0 && !isJumping){
+				yMove -= gravity;
+				gravity -= 1;
 				
-				 
-				if(!collisionWithTile(tx, ty + 1)){
-					yMove += speed;
-				}else{
-					jumpCount = 0;
+				if(gravity == 0){
+					isJumping = true;
+				}
+			}else{
+				if(isJumping){
+					gravity++;
+					yMove += gravity;
+					if(gravity == 30){
+						isJumping = false;
+					}
 				}
 			}
 			
-//			if(jumpCount < 32 && climb){
-//				yMove =- speed;
-//				jumpCount =+ 1;9
-//				if(jumpCount == 32){
-//					climb = false;
-//				}
-//			}else{
-//				yMove =+ speed;
-//				jumpCount--;
-//				if(!(jumpCount == 0)){
-//					climb = false;
-//				}else{
-//					climb = true;
-//				}
-//			}
 		}else{
 			yMove += speed;
 		}
