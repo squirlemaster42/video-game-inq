@@ -50,8 +50,6 @@ public class Player extends Creature{
 		xMove = 0;
 		yMove = 0;
 		
-		System.out.println(gravity);
-		
 		if(handler.getKeyManager().space){
 			if(gravity > 0 && !isJumping){
 				yMove -= gravity;
@@ -79,6 +77,8 @@ public class Player extends Creature{
 			
 		if(handler.getKeyManager().left)
 			xMove -= speed;
+		
+		yMove += 2;
 		
 		if(handler.getKeyManager().r){
 			this.setX(100);
