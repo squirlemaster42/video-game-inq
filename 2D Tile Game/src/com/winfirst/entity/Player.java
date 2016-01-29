@@ -53,7 +53,7 @@ public class Player extends Creature{
 		if(handler.getKeyManager().space){
 			if(gravity > 0 && !isJumping){
 				yMove -= gravity;
-				gravity -= 1;
+				gravity --;
 				
 				if(gravity == 0){
 					isJumping = true;
