@@ -5,7 +5,6 @@ import java.awt.image.BufferedImage;
 
 import com.winfirst.graphics.Animation;
 import com.winfirst.tile.Assets;
-import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 
 public class Player extends Creature{
@@ -13,6 +12,7 @@ public class Player extends Creature{
 	//Animations
 	private Animation animDown, animLeft, animRight, animUp, animStop;
 	private int gravity = 20;
+	private int time = 0;
 	private boolean isJumping = false;
 	
 	public Player(Handler handler, float x, float y) {
@@ -54,6 +54,7 @@ public class Player extends Creature{
 			if(gravity > 0 && !isJumping){
 				yMove -= gravity;
 				gravity --;
+				time++;
 				
 				if(gravity == 0){
 					isJumping = true;
@@ -64,6 +65,10 @@ public class Player extends Creature{
 					yMove += gravity;
 					if(gravity == 30){
 						isJumping = false;
+					}else if(time > 200){
+						isJumping = false;
+						time = 0;
+						gravity = 30;
 					}
 				}
 			}
