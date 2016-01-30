@@ -50,11 +50,13 @@ public class Player extends Creature{
 		xMove = 0;
 		yMove = 0;
 		
+		//System.out.println(time);
+		
 		if(handler.getKeyManager().space){
 			if(gravity > 0 && !isJumping){
 				yMove -= gravity;
 				gravity --;
-				time++;
+				//time++;
 				
 				if(gravity == 0){
 					isJumping = true;
@@ -65,11 +67,12 @@ public class Player extends Creature{
 					yMove += gravity;
 					if(gravity == 30){
 						isJumping = false;
-					}else if(time > 200){
-						isJumping = false;
-						time = 0;
-						gravity = 30;
 					}
+					//else if(time > 30){
+						//isJumping = false;
+						//time = 0;
+						//gravity = 30;
+					//}
 				}
 			}
 			
