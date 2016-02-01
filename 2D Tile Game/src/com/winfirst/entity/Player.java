@@ -12,7 +12,6 @@ public class Player extends Creature{
 	//Animations
 	private Animation animDown, animLeft, animRight, animUp, animStop;
 	private int gravity = 20;
-	private int time = 0;
 	private boolean isJumping = false;
 	
 	public Player(Handler handler, float x, float y) {
@@ -56,7 +55,6 @@ public class Player extends Creature{
 			if(gravity > 0 && !isJumping){
 				yMove -= gravity;
 				gravity --;
-				//time++;
 				
 				if(gravity == 0){
 					isJumping = true;
@@ -68,11 +66,6 @@ public class Player extends Creature{
 					if(gravity == 30){
 						isJumping = false;
 					}
-					//else if(time > 30){
-						//isJumping = false;
-						//time = 0;
-						//gravity = 30;
-					//}
 				}
 			}
 			
