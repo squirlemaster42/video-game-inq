@@ -11,3 +11,5 @@ Lead Developer: Jakob Misbach
 Developer: Tre
 
 Plot Design: Tre
+
+Currently working on level design. 
