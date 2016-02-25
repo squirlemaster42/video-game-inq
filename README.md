@@ -1,6 +1,6 @@
 #Welcome to the RPG-Gaame README!
 
-This is a Java platformer that hopes to integrate puzzles, a diverse storyline and many different characters.
+This is a Java platformer that hopes to integrate puzzles and other problem solving tasks.
 
 Please keep in mind that this game is still in developement and is not meant to be fully playable yet.
 
