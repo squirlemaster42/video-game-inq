@@ -12,4 +12,4 @@ Developer: Tre
 
 Plot Design: Tre
 
-Currently working on level design. 
+Currently working on level design and adding rigidity do the software. 
