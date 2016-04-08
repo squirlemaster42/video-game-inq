@@ -1,11 +1,9 @@
 package com.winfirst.world;
 
 import java.awt.Graphics;
-import java.util.concurrent.ThreadLocalRandom;
 
 import com.winfirst.entity.EntityManager;
 import com.winfirst.entity.Player;
-import com.winfirst.entity.Tree;
 import com.winfirst.tile.Tile;
 import com.winfirst.utils.Handler;
 import com.winfirst.utils.Utils;

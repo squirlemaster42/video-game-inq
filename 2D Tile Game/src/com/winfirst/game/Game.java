@@ -7,7 +7,6 @@ import com.winfirst.graphics.Display;
 import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
 import com.winfirst.states.GameState;
-import com.winfirst.states.MainMenu;
 import com.winfirst.states.State;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
@@ -27,7 +26,6 @@ public class Game implements Runnable{
 	
 	//States
 	private State gameState;
-	private State menuState;
 	
 	//Input
 	private KeyManager keyManager;
@@ -54,7 +52,6 @@ public class Game implements Runnable{
 		gameCamera = new GameCamera(handler, 0, 0);
 		
 		gameState = new GameState(handler);
-		menuState = new MainMenu(handler);
 		State.setState(gameState);
 	}
 	
