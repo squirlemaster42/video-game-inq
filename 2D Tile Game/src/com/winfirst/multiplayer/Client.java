@@ -1,8 +1,12 @@
 package com.winfirst.multiplayer;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+
+import com.winfirst.entity.Entity;
 
 public class Client implements Runnable{
 	private Socket socket;
@@ -10,13 +14,17 @@ public class Client implements Runnable{
 	private String ip;
 	private boolean running;
 	private Thread thread;
+	private PrintWriter pw;
+	private ArrayList<Entity> entArr;
 	
 	public Client(int port, String ip){
 		this.port = port;
 		this.ip = ip;
 		this.running = false;
+		entArr = new ArrayList<>();
 		try {
 			this.socket = new Socket(ip, port);
+			this.pw = new PrintWriter(socket.getOutputStream(), true);
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -25,7 +33,11 @@ public class Client implements Runnable{
 	}
 	
 	private void init(){
-		
+		pw.println("Connected");
+	}
+	
+	private void writePosition(Position position){
+		pw.println(position.toString());
 	}
 
 	@Override
@@ -33,8 +45,12 @@ public class Client implements Runnable{
 		init();
 		
 		while(running){
-			
+			entArr.forEach((e) -> writePosition(new Position(e.getX(), e.getY())));
 		}
+	}
+	
+	public void addEntity(Entity e){
+		entArr.add(e);
 	}
 	
 	public synchronized void start(){
