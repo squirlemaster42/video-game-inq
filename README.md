@@ -6,4 +6,4 @@ We will be creating a game that shows how the industry grew, and allow users to 
 
 Essential Question: How did video games progress between 1970-90s in America?
 
-Thesis: Between the 1970 and 1990s, video games grew to be a very popular, and massive industry in America?
+Thesis: Between the 1970 and 1990s, video games grew to be a very popular, and massive industry in America.
