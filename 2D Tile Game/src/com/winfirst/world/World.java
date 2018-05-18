@@ -1,6 +1,7 @@
 package com.winfirst.world;
 
 import java.awt.Graphics;
+import java.io.FileNotFoundException;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.winfirst.entity.EntityManager;
@@ -26,11 +27,10 @@ public class World {
 		entityManager = new EntityManager(handler, new Player(handler, 100, 100));
 		entityManager.addEntity(new Tree(handler, 200, 200));
 		
-		for(int i = 0; i < 5; i++) {
-			entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
-		}
-		
-		
+//		for(int i = 0; i < 5; i++) {
+//			entityManager.addEntity(new Tree(handler, ThreadLocalRandom.current().nextInt(1, 35) * 64, ThreadLocalRandom.current().nextInt(1, 22) * 64));
+//		}
+
 		loadWorld(path);
 		
 		entityManager.getPlayer().setX(spawnX);
@@ -75,7 +75,7 @@ public class World {
 	
 	private void loadWorld(String path){
 		String file = Utils.loadFileAsString(path);
-		String[] tokens = file.split("\\s+");
+        String[] tokens = file.split("\\s+");
 		width = Utils.parseInt(tokens[0]);
 		height = Utils.parseInt(tokens[1]);
 		spawnX = Utils.parseInt(tokens[2]);

@@ -1,6 +1,7 @@
 package com.winfirst.utils;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -17,7 +18,10 @@ public class Utils {
 			}
 			
 			br.close();
-		}catch(IOException e){
+		} catch(FileNotFoundException e) {
+			e.printStackTrace();
+			System.out.println(path);
+		} catch(IOException e){
 			e.printStackTrace();
 		}
 		

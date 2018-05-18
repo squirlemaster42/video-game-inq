@@ -6,6 +6,7 @@ import java.awt.image.BufferStrategy;
 import com.winfirst.graphics.Display;
 import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
+import com.winfirst.pong.PongState;
 import com.winfirst.states.GameState;
 import com.winfirst.states.MainMenu;
 import com.winfirst.states.State;
@@ -28,6 +29,7 @@ public class Game implements Runnable{
 	//States
 	private State gameState;
 	private State menuState;
+	private State pongState;
 	
 	//Input
 	private KeyManager keyManager;
@@ -55,7 +57,8 @@ public class Game implements Runnable{
 		
 		gameState = new GameState(handler);
 		menuState = new MainMenu(handler);
-		State.setState(gameState);
+		pongState = new PongState(handler);
+		State.setState(pongState);
 	}
 	
 	
