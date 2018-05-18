@@ -16,7 +16,7 @@ public class KeyManager implements KeyListener{
 		p2Up = keys[KeyEvent.VK_UP];
 		p2Down = keys[KeyEvent.VK_DOWN];
 		p1Up = keys[KeyEvent.VK_W];
-		p1Down = keys[KeyEvent.VK_W];
+		p1Down = keys[KeyEvent.VK_S];
 
 		up = keys[KeyEvent.VK_W];
         down = keys[KeyEvent.VK_S];
