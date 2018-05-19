@@ -51,6 +51,19 @@ public abstract class Entity {
 
 		return false;
 	}
+
+	public boolean checkEntityCollision(float xOffset, float yOffset, EntityManager manager){
+		for(Entity e : manager.getEntities()){
+			if(e.equals(this)){
+				continue;
+			}
+			if(e.getCollisionBounds(0, 0).intersects(getCollisionBounds(xOffset, yOffset))){
+				return true;
+			}
+		}
+
+		return false;
+	}
 	
 	public Rectangle getCollisionBounds(float xOffset, float yOffset){
 		return new Rectangle((int) (x + bounds.x + xOffset), (int) (y + bounds.y +yOffset), bounds.width, bounds.height);

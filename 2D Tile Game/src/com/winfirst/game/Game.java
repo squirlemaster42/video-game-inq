@@ -7,6 +7,7 @@ import com.winfirst.graphics.Display;
 import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
 import com.winfirst.pong.PongState;
+import com.winfirst.space.SpaceState;
 import com.winfirst.states.GameState;
 import com.winfirst.states.MainMenu;
 import com.winfirst.states.State;
@@ -30,6 +31,7 @@ public class Game implements Runnable{
 	private State gameState;
 	private State menuState;
 	private State pongState;
+	private State spaceState;
 	
 	//Input
 	private KeyManager keyManager;
@@ -58,7 +60,8 @@ public class Game implements Runnable{
 		gameState = new GameState(handler);
 		menuState = new MainMenu(handler);
 		pongState = new PongState(handler);
-		State.setState(pongState);
+		spaceState = new SpaceState(handler);
+		State.setState(spaceState);
 	}
 	
 	
