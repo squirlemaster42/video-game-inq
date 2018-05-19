@@ -1,6 +1,7 @@
 package com.winfirst.space;
 
 import com.winfirst.entity.Entity;
+import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
 import java.awt.Graphics;
@@ -18,6 +19,6 @@ public class Alien extends Entity {
 
     @Override
     public void render(Graphics g) {
-
+        g.drawImage(Assets.alien, (int) x, (int) y, null);
     }
 }
