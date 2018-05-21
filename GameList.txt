@@ -2,5 +2,5 @@ Pong
 Space invaders
 PacMan
 Mario
-Street Fighter
+Street Fighter (Breakout if no time)
 Tetris
