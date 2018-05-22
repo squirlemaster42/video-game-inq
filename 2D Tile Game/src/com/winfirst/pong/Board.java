@@ -31,11 +31,13 @@ public class Board {
         player1.render(g);
         player2.render(g);
 
-        //Draw score
+        //Draw scores
         g.setFont(new Font("TimesRoman", Font.PLAIN, 40));
-        g.drawString(Integer.toString(player1.score), 600, 45);
-        g.fillRect(650, 10, 10, 20);
-        g.fillRect(650, 40, 10, 20);
-        g.drawString(Integer.toString(player2.score), 685, 45);
+        g.drawString(Integer.toString(player1.score), 685, 45);
+        g.drawString(Integer.toString(player2.score), 600, 45);
+
+        for(int i = 10; i < handler.getGame().getHeight(); i += 40){
+            g.fillRect(654, i, 4, 20);
+        }
     }
 }
