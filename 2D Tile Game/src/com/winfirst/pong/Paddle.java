@@ -17,8 +17,6 @@ public class Paddle extends Entity {
 
     @Override
     public void tick() {
-        System.out.println(score);
-
         if(playerNum == 1){
             if(handler.getKeyManager().p1Up && y > 0){
                 y -= 5;

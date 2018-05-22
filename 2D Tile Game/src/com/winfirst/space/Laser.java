@@ -9,14 +9,19 @@ import java.awt.Graphics;
 
 public class Laser extends Entity {
 
-    private int xMove, yMove;
+    private int yMove;
     private EntityManager entityManager;
 
     public Laser(Handler handler, float x, float y, int width, int height, EntityManager entityManager) {
         super(handler, x, y, width, height);
         this.entityManager = entityManager;
-        xMove = 5;
         yMove = 5;
+    }
+
+    public Laser(Handler handler, float x, float y, int width, int height, int yMove, EntityManager entityManager) {
+        super(handler, x, y, width, height);
+        this.entityManager = entityManager;
+        this.yMove = yMove;
     }
 
     @Override

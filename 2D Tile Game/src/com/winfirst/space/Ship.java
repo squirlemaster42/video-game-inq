@@ -29,7 +29,6 @@ public class Ship extends Entity {
         }
 
         if(handler.getKeyManager().space && timeSinceLastShot > 20){
-            System.out.println("Shoot");
             entityManager.addEntity(new Laser(handler,(int) x + width / 2, (int) y - 10, 4, 10, entityManager));
             timeSinceLastShot = 0;
         }
