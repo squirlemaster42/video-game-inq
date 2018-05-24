@@ -61,7 +61,7 @@ public class Game implements Runnable{
 		menuState = new MainMenu(handler);
 		pongState = new PongState(handler);
 		spaceState = new SpaceState(handler);
-		State.setState(spaceState);
+		State.setState(pongState);
 	}
 	
 	
@@ -142,6 +142,10 @@ public class Game implements Runnable{
 	
 	public int getHeight(){
 		return height;
+	}
+
+	public Thread getThread(){
+		return thread;
 	}
 	
 	public synchronized void start(){
