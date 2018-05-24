@@ -25,8 +25,8 @@ public class Alien extends Entity {
         xMove = Math.sin(tickCounter / 30) * 3;
         tickCounter++;
 
-        if(!entityBelow() && tickCounter % 60 == 0){
-            entityManager.addEntity(new Laser(handler, x + width / 2, y + 50, 4, 10, -5, entityManager));
+        if(tickCounter % 60 == 0 && !entityBelow()){
+            entityManager.addEntity(new Laser(handler, x + width / 2, y + height, 4, 10, -5, entityManager));
         }
     }
 
@@ -40,7 +40,7 @@ public class Alien extends Entity {
         int indexOfThis = entities.indexOf(this);
 
         for(int i  = indexOfThis + 1; i < entities.size(); i++){
-            if(entities.get(i).getX() == x && entities.get(i) instanceof Alien){
+            if((Math.abs((int) entities.get(i).getX() - (int) x) < 10) && (entities.get(i) instanceof Alien)){
                 return true;
             }
         }

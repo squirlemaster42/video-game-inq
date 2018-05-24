@@ -21,6 +21,7 @@ public class Board {
             for(int i = 0; i < 12; i++){
                 entityManager.addEntity(new Alien(handler, i * 98, j * 100, 32, 26, entityManager));
             }
+            System.out.println();
         }
 
     }

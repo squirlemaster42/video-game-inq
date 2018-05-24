@@ -61,7 +61,7 @@ public class Game implements Runnable{
 		menuState = new MainMenu(handler);
 		pongState = new PongState(handler);
 		spaceState = new SpaceState(handler);
-		State.setState(pongState);
+		State.setState(spaceState);
 	}
 	
 	

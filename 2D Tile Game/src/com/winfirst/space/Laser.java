@@ -38,6 +38,10 @@ public class Laser extends Entity {
 
             }
         }
+
+        if(y < 0){
+            entityManager.getEntities().remove(this);
+        }
     }
 
     @Override
