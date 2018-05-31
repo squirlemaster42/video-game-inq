@@ -5,6 +5,9 @@ import com.winfirst.utils.Handler;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Random;
 
 public class Board {
 
@@ -24,10 +27,16 @@ public class Board {
     private static final int[][] board = new int[22][10];
     
     private Handler handler;
-    
+
+    private Random random;
+
+    private Queue<Piece> pieceQueue;
 
     public Board(Handler handler){
         this.handler = handler;
+        this.random = new Random();
+        this.pieceQueue = new PriorityQueue<>();
+
         pieceList = new ArrayList<>();
         pieceList.add(new Piece(handler, pieces[0], Color.YELLOW));
         pieceList.add(new Piece(handler, pieces[1], Color.ORANGE));
@@ -40,6 +49,10 @@ public class Board {
     }
 
     public void tick(){
+        if(pieceQueue.size() < 4) {
+            pieceQueue.add(pieceList.get(random.nextInt(pieceList.size())));
+        }
+
         pieceList.forEach(Piece::tick);
     }
 
