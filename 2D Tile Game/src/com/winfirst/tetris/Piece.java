@@ -1,11 +1,11 @@
 package com.winfirst.tetris;
 
-import com.winfirst.utils.Handler;
-
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Piece {
+import com.winfirst.utils.Handler;
+
+public class Piece implements Comparable{
 
     private Handler handler;
     private int row, col;
@@ -56,4 +56,9 @@ public class Piece {
     public int[][] currentPiece(){
         return currentPiece;
     }
+
+	@Override
+	public int compareTo(Object arg0) {
+		return 0;
+	}
 }
