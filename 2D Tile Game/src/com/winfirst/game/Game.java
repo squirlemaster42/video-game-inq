@@ -11,6 +11,7 @@ import com.winfirst.space.SpaceState;
 import com.winfirst.states.GameState;
 import com.winfirst.states.MainMenu;
 import com.winfirst.states.State;
+import com.winfirst.tetris.TetrisState;
 import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
@@ -32,6 +33,7 @@ public class Game implements Runnable{
 	private State menuState;
 	private State pongState;
 	private State spaceState;
+	private State tetrisState;
 	
 	//Input
 	private KeyManager keyManager;
@@ -61,7 +63,8 @@ public class Game implements Runnable{
 		menuState = new MainMenu(handler);
 		pongState = new PongState(handler);
 		spaceState = new SpaceState(handler);
-		State.setState(spaceState);
+		tetrisState = new TetrisState(handler);
+		State.setState(tetrisState);
 	}
 	
 	

@@ -12,7 +12,7 @@ public class TetrisState extends State {
     public TetrisState(Handler handler) {
         super(handler);
 
-        this.board = new Board();
+        this.board = new Board(handler);
     }
 
     @Override
