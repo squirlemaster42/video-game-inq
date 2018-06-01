@@ -57,8 +57,16 @@ public class Piece implements Comparable{
         return currentPiece;
     }
 
-	@Override
-	public int compareTo(Object arg0) {
-		return 0;
-	}
+    private int getRow(){
+	return row;
+    }
+	
+    private int getCol(){
+	return col;
+    }
+	
+    @Override
+    public int compareTo(Object arg0) {
+    	return 0;
+    }
 }
