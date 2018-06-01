@@ -52,7 +52,7 @@ public class Board {
     public void tick(){
         ArrayList<Integer> removedLines = new ArrayList<>();
         if(pieceQueue.size() < 4) {
-            pieceQueue.add(pieceList.get(random.nextInt(pieceList.size())));
+            pieceQueue.add(pieceList.get(random.nextInt(pieceList.size())).clone());
         }
         
         if(activePiece == null){
