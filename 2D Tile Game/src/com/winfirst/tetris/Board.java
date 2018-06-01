@@ -59,8 +59,8 @@ public class Board {
             activePiece = pieceQueue.poll();
         }
         
-        if(!canMoveDown(activePiece){
-            activePiece == null;
+        if(!canMoveDown(activePiece)){
+            activePiece = null;
         }
            
         activePiece.tick();
@@ -80,7 +80,7 @@ public class Board {
         }
            
         for(int i = 0; i < removedLines.size(); i++){
-            for(j = removedLines[i]; j > 0; j--){
+            for(int j = removedLines.get(i); j > 0; j--){
                 for(int k = 0; k < board[0].length; k++){
                     board[j][k] = board[j - 1][k];
                 }

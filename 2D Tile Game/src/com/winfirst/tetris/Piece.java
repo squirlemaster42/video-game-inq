@@ -68,7 +68,12 @@ public class Piece implements Comparable{
     public int[][] getCurrentPiece(){
 	return currentPiece;
     }
-	
+
+    @Override
+    public Piece clone(){
+        return this.clone();
+    }
+
     @Override
     public int compareTo(Object arg0) {
     	return 0;
