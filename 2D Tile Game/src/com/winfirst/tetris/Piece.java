@@ -57,12 +57,16 @@ public class Piece implements Comparable{
         return currentPiece;
     }
 
-    private int getRow(){
+    public int getRow(){
 	return row;
     }
 	
-    private int getCol(){
+    public int getCol(){
 	return col;
+    }
+	
+    public int[][] getCurrentPiece(){
+	return currentPiece;
     }
 	
     @Override
