@@ -92,7 +92,7 @@ public class Board {
         pieceList.forEach(e -> e.render(g));
     }
            
-    private boolean canMoveDown(){
+    private boolean canMoveDown(Piece piece){
         return true;
     }
            
