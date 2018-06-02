@@ -11,6 +11,10 @@ import java.util.Random;
 
 public class Board {
 
+    //Drawing constants
+    private static final int singleTileWidth = 32;
+    private static final int singleTileHeight = 32;
+
     //Define pieces and rotations
     private static final int[][][][] pieces = new int[][][][]{
             //T
@@ -31,7 +35,7 @@ public class Board {
 
     private ArrayList<Piece> pieceList;
     
-    private static final int[][] board = new int[22][10];
+    private static final int[][] board = new int[10][22];
 
     private Handler handler;
 
@@ -65,9 +69,13 @@ public class Board {
 
         //Adding new pieces
         if(pieceQueue.size() < 4) {
-            pieceQueue.add(pieceList.get(random.nextInt(pieceList.size())).clone());
+            try {
+                pieceQueue.add(pieceList.get(random.nextInt(pieceList.size())).clone());
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
         }
-        
+
         if(activePiece == null){
             activePiece = pieceQueue.poll();
         }
@@ -117,7 +125,17 @@ public class Board {
     }
 
     public void render(Graphics g){
-        pieceList.forEach(e -> e.render(g));
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, handler.getGame().getWidth(), handler.getGame().getHeight());
+
+        g.setColor(Color.WHITE);
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board[0].length; j++){
+                if(board[i][j] == 1){
+                    g.fillRect(i * singleTileWidth, j * singleTileHeight, singleTileWidth, singleTileHeight);
+                }
+            }
+        }
     }
            
     private boolean canMoveDown(Piece piece){

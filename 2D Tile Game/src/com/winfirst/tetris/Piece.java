@@ -2,10 +2,11 @@ package com.winfirst.tetris;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Arrays;
 
 import com.winfirst.utils.Handler;
 
-public class Piece implements Comparable{
+public class Piece implements Comparable, Cloneable{
 
     private Handler handler;
     private int row, col;
@@ -57,9 +58,6 @@ public class Piece implements Comparable{
         col--;
     }
 
-    public void render(Graphics g) {
-
-    }
 
     public int[][] currentPiece(){
         return currentPiece;
@@ -78,12 +76,17 @@ public class Piece implements Comparable{
     }
 
     @Override
-    public Piece clone(){
-        return this.clone();
+    public Piece clone() throws CloneNotSupportedException {
+        return (Piece) super.clone();
     }
 
     @Override
     public int compareTo(Object arg0) {
     	return 0;
+    }
+
+    @Override
+    public String toString(){
+        return Arrays.deepToString(currentPiece);
     }
 }
