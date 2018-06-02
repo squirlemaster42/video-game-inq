@@ -93,6 +93,28 @@ public class Board {
     }
            
     private boolean canMoveDown(Piece piece){
+        ArrayList<Integer> lowestPoints = new ArrayList<>();
+
+        for(int i = 0; i < piece.getCurrentPiece()[0].length; i++){
+            int lowestPoint = 0;
+            for(int j = 0; j < piece.getCurrentPiece().length; j++){
+                if(piece.getCurrentPiece()[j][i] != 0){
+                    lowestPoint = j;
+                }
+            }
+            lowestPoints.add(lowestPoint);
+        }
+
+        for(int i = 0; i < lowestPoints.size(); i++){
+            int row = piece.getRow();
+            int col = piece.getCol();
+            int numBelowLowestPoint = board[row][col + lowestPoints.get(i) + 1];
+
+            if(numBelowLowestPoint == 1){
+                return false;
+            }
+        }
+
         return true;
     }
            
