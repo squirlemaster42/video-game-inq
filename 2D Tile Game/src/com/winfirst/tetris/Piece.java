@@ -45,8 +45,16 @@ public class Piece implements Comparable{
         }
     }
 
-    public void tick() {
+    public void moveDown(){
+        row++;
+    }
 
+    public void moveRight(){
+        col++;
+    }
+
+    public void moveLeft(){
+        col--;
     }
 
     public void render(Graphics g) {

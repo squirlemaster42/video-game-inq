@@ -13,28 +13,37 @@ public class Board {
 
     //Define pieces and rotations
     private static final int[][][][] pieces = new int[][][][]{
+            //T
             {{{1, 1, 1}, {0, 1, 0}}, {{0, 1}, {1, 1}, {0, 1}}, {{0, 1, 0}, {1, 1, 1}}, {{1, 0}, {1, 1}, {1, 0}}},
+            //Straight Piece
             {{{1, 1, 1, 1}}, {{1}, {1}, {1}, {1}}},
+            //Square
             {{{1, 1}, {1, 1}}},
+            //J
             {{{1, 1}, {1, 0}, {1, 0}}, {{1, 1, 1}, {0, 0, 1}}, {{0, 1}, {0, 1}, {1, 1}}, {{1, 0, 0}, {1, 1, 1}}},
+            //L
             {{{1, 1}, {0, 1}, {0, 1}}, {{0, 0, 1}, {1, 1, 1}}, {{1, 0}, {1, 0}, {1, 1}}, {{1, 1, 1}, {1, 0, 0}}},
+            //Z
             {{{1, 0}, {1, 1}, {0, 1}}, {{0, 1, 1}, {1, 1, 0}}},
+            //S
             {{{0, 1}, {1, 1}, {1, 0}}, {{1, 1, 0}, {0, 1, 1}}}
     };
 
     private ArrayList<Piece> pieceList;
     
     private static final int[][] board = new int[22][10];
-    
+
     private Handler handler;
 
     private Random random;
 
     private Queue<Piece> pieceQueue;
-    
+
     private Piece activePiece = null;
 
-    public Board(Handler handler){
+    private long totalTicks = 0;
+
+    Board(Handler handler){
         this.handler = handler;
         this.random = new Random();
         this.pieceQueue = new PriorityQueue<>();
@@ -50,7 +59,11 @@ public class Board {
     }
 
     public void tick(){
+        totalTicks++;
+
         ArrayList<Integer> removedLines = new ArrayList<>();
+
+        //Adding new pieces
         if(pieceQueue.size() < 4) {
             pieceQueue.add(pieceList.get(random.nextInt(pieceList.size())).clone());
         }
@@ -58,13 +71,20 @@ public class Board {
         if(activePiece == null){
             activePiece = pieceQueue.poll();
         }
-        
-        if(!canMoveDown(activePiece)){
+
+        //TODO Might not work because of assert
+        //Moves piece down
+        assert activePiece != null;
+        if(canMoveDown(activePiece)){
+            if(totalTicks % 60 == 0){
+                activePiece.moveDown();
+            }
+
+        }else{
             activePiece = null;
         }
-           
-        activePiece.tick();
-           
+
+        //Removing completed lines
         for(int i = 0; i < board.length; i++){
             int sum = 0;
             for(int j = 0; j < board[0].length; j++){
@@ -85,6 +105,14 @@ public class Board {
                     board[j][k] = board[j - 1][k];
                 }
             }
+        }
+
+        //TODO Add bound and piece detection
+        //Moving piece left and right
+        if(handler.getKeyManager().right){
+            activePiece.moveRight();
+        }else if(handler.getKeyManager().left){
+            activePiece.moveLeft();
         }
     }
 
