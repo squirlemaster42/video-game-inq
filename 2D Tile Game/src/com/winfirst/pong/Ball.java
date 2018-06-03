@@ -16,8 +16,8 @@ public class Ball extends Entity {
 
     public Ball(Handler handler, float x, float y, int width, Paddle[] paddles) {
         super(handler, x, y, width, width);
-        xMove = 5;
-        yMove = 5;
+        xMove = 6;
+        yMove = 6;
         prevXMove = xMove;
         prevYMove = yMove;
         this.paddles = paddles;
