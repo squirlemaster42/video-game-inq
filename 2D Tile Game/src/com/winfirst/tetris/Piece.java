@@ -47,15 +47,15 @@ public class Piece implements Comparable, Cloneable{
     }
 
     public void moveDown(){
-        row++;
-    }
-
-    public void moveRight(){
         col++;
     }
 
+    public void moveRight(){
+        row++;
+    }
+
     public void moveLeft(){
-        col--;
+        row--;
     }
 
 

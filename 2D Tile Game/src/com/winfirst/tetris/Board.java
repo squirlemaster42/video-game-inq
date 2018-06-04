@@ -4,10 +4,7 @@ import com.winfirst.utils.Handler;
 
 import java.awt.Graphics;
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Random;
+import java.util.*;
 
 public class Board {
 
@@ -35,7 +32,7 @@ public class Board {
 
     private ArrayList<Piece> pieceList;
     
-    private static final int[][] board = new int[10][22];
+    private static final int[][] board = new int[22][10];
 
     private Handler handler;
 
@@ -65,6 +62,14 @@ public class Board {
     public void tick(){
         totalTicks++;
 
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board[0].length; j++){
+                if(board[i][j] == 1){
+                    board[i][j] = 0;
+                }
+            }
+        }
+
         ArrayList<Integer> removedLines = new ArrayList<>();
 
         //Adding new pieces
@@ -80,6 +85,17 @@ public class Board {
             activePiece = pieceQueue.poll();
         }
 
+        System.out.println(activePiece.toString());
+        System.out.println(Arrays.deepToString(board));
+
+        //Add piece to board
+        assert activePiece != null;
+        for(int i = 0; i < activePiece.getCurrentPiece().length; i++){
+            for(int j = 0; j < activePiece.getCurrentPiece()[0].length; j++){
+                board[activePiece.getRow() + i][activePiece.getCol() + j] = activePiece.getCurrentPiece()[i][j];
+            }
+        }
+
         //TODO Might not work because of assert
         //Moves piece down
         assert activePiece != null;
@@ -89,6 +105,11 @@ public class Board {
             }
 
         }else{
+            for(int i = 0; i < activePiece.getCurrentPiece().length; i++){
+                for(int j = 0; j < activePiece.getCurrentPiece()[0].length; j++){
+                    board[activePiece.getRow() + i][activePiece.getCol() + j] = activePiece.getCurrentPiece()[i][j] + 1;
+                }
+            }
             activePiece = null;
         }
 
@@ -131,7 +152,7 @@ public class Board {
         g.setColor(Color.WHITE);
         for(int i = 0; i < board.length; i++){
             for(int j = 0; j < board[0].length; j++){
-                if(board[i][j] == 1){
+                if(board[i][j] == 1 || board[i][j] == 2){
                     g.fillRect(i * singleTileWidth, j * singleTileHeight, singleTileWidth, singleTileHeight);
                 }
             }
@@ -151,15 +172,20 @@ public class Board {
             lowestPoints.add(lowestPoint);
         }
 
-        for(int i = 0; i < lowestPoints.size(); i++){
-            int row = piece.getRow();
-            int col = piece.getCol();
-            int numBelowLowestPoint = board[row][col + lowestPoints.get(i) + 1];
+        try{
+            for(int i = 0; i < lowestPoints.size(); i++){
+                int row = piece.getRow();
+                int col = piece.getCol();
+                int numBelowLowestPoint = board[row][col + lowestPoints.get(i) + 1];
 
-            if(numBelowLowestPoint == 1){
-                return false;
+                if(numBelowLowestPoint == 1){
+                    return false;
+                }
             }
+        }catch(ArrayIndexOutOfBoundsException e){
+            return false;
         }
+
 
         return true;
     }
