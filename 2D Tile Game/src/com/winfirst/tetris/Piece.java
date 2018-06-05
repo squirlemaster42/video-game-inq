@@ -13,7 +13,7 @@ public class Piece implements Comparable, Cloneable{
     private Color color;
     private int[][][] diagrams;
     private int[][] currentPiece;
-    int index = 0;
+    private int index = 0;
 
     public Piece(Handler handler, int[][][] diagrams, Color color) {
         this.handler = handler;

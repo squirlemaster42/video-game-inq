@@ -44,6 +44,9 @@ public class Board {
 
     private long totalTicks = 0;
 
+    private boolean rightPressed = false;
+    private boolean leftPressed = false;
+
     Board(Handler handler){
         this.handler = handler;
         this.random = new Random();
@@ -96,7 +99,25 @@ public class Board {
             }
         }
 
-        //TODO Might not work because of assert
+        //Moving piece left and right
+        if(handler.getKeyManager().right && !rightPressed && !(activePiece.getRow() + activePiece.getCurrentPiece()[0].length == 10)){
+            activePiece.moveRight();
+            rightPressed = true;
+        }else if(handler.getKeyManager().left && !leftPressed && !(activePiece.getRow() == 0)){
+            activePiece.moveLeft();
+            leftPressed = true;
+        }else if(handler.getKeyManager().down && canMoveDown(activePiece)){
+            activePiece.moveDown();
+        }
+
+        if(!handler.getKeyManager().right){
+            rightPressed = false;
+        }
+
+        if(!handler.getKeyManager().left){
+            leftPressed = false;
+        }
+        
         //Moves piece down
         assert activePiece != null;
         if(canMoveDown(activePiece)){
@@ -134,14 +155,6 @@ public class Board {
                     board[j][k] = board[j - 1][k];
                 }
             }
-        }
-
-        //TODO Add bound and piece detection
-        //Moving piece left and right
-        if(handler.getKeyManager().right){
-            activePiece.moveRight();
-        }else if(handler.getKeyManager().left){
-            activePiece.moveLeft();
         }
     }
 
