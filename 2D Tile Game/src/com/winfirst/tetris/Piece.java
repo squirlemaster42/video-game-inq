@@ -1,7 +1,6 @@
 package com.winfirst.tetris;
 
 import java.awt.Color;
-import java.awt.Graphics;
 import java.util.Arrays;
 
 import com.winfirst.utils.Handler;
@@ -58,6 +57,9 @@ public class Piece implements Comparable, Cloneable{
         row--;
     }
 
+    public Color getColor(){
+        return color;
+    }
 
     public int[][] currentPiece(){
         return currentPiece;

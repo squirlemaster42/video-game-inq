@@ -4,7 +4,11 @@ import com.winfirst.utils.Handler;
 
 import java.awt.Graphics;
 import java.awt.Color;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Random;
 
 public class Board {
 
@@ -117,7 +121,7 @@ public class Board {
         if(!handler.getKeyManager().left){
             leftPressed = false;
         }
-        
+
         //Moves piece down
         assert activePiece != null;
         if(canMoveDown(activePiece)){
