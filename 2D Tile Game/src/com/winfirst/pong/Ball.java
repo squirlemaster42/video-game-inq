@@ -13,7 +13,7 @@ public class Ball extends Entity {
     private int counter = 4;
     private int startTick = 0;
     private int totalTicks = 0;
-
+    private final int endScore = 10;
     public Ball(Handler handler, float x, float y, int width, Paddle[] paddles) {
         super(handler, x, y, width, width);
         xMove = 6;
@@ -36,13 +36,24 @@ public class Ball extends Entity {
         if (x < 0){
             xMove *= -1;
             paddles[0].score++;
-            resetBall();
+            if (isWon(paddles[0].score) == true) {
+            	xMove = 0;
+            	yMove = 0;
+            }
+            else
+            	resetBall();
         }
 
         if (x > handler.getGame().getWidth() - width){
             xMove *= -1;
             paddles[1].score++;
-            resetBall();
+            if (isWon(paddles[1].score) == true) {
+            	xMove = 0;
+            	yMove = 0;
+            }
+            else
+            	resetBall();
+            
         }
 
         if ((y < 0) || (y > handler.getGame().getHeight() - width)){
@@ -79,6 +90,13 @@ public class Ball extends Entity {
             }
         }
     }
+    public boolean isWon(int paddleScore) {
+    	if (paddleScore == endScore)
+    		return true;
+    	else 
+    		return false;
+    }
+    
 
     private void resetBall(){
         x = 650;
