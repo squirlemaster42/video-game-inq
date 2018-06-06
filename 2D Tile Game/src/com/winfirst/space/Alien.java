@@ -7,16 +7,19 @@ import com.winfirst.utils.Handler;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Alien extends Entity {
 
     private double xMove;
     private int tickCounter = 0;
     private EntityManager entityManager;
+    private Random rand;
 
     public Alien(Handler handler, float x, float y, int width, int height, EntityManager entityManager) {
         super(handler, x, y, width, height);
         this.entityManager = entityManager;
+        this.rand = new Random();
     }
 
     @Override
@@ -25,7 +28,7 @@ public class Alien extends Entity {
         xMove = Math.sin(tickCounter / 30) * 3;
         tickCounter++;
 
-        if(tickCounter % 60 == 0 && !entityBelow()){
+        if(tickCounter % 60 == 0 && !entityBelow() && rand.nextInt(6) == 3){
             entityManager.addEntity(new Laser(handler, x + width / 2, y + height, 4, 10, -5, entityManager));
         }
     }
