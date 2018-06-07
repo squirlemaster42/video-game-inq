@@ -193,7 +193,7 @@ public class Board {
             for(int i = 0; i < lowestPoints.size(); i++){
                 int row = piece.getRow();
                 int col = piece.getCol();
-                int numBelowLowestPoint = board[row][col + lowestPoints.get(i) + 1];
+                int numBelowLowestPoint = board[col + lowestPoints.get(i) + 1][row];
 
                 if(numBelowLowestPoint == 1){
                     return false;
