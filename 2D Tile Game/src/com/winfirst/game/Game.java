@@ -64,7 +64,7 @@ public class Game implements Runnable{
 		pongState = new PongState(handler);
 		spaceState = new SpaceState(handler);
 		tetrisState = new TetrisState(handler);
-		State.setState(tetrisState);
+		State.setState(PacManState);
 	}
 	
 	
