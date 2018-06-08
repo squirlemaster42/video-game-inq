@@ -67,7 +67,8 @@ public class Game implements Runnable{
 		spaceState = new SpaceState(handler);
 		tetrisState = new TetrisState(handler);
 		pacManState = new PacManState(handler);
-		State.setState(pacManState);
+		//State.setState(pacManState);
+		State.setState(tetrisState);
 	}
 	
 	
@@ -149,6 +150,10 @@ public class Game implements Runnable{
 	public int getHeight(){
 		return height;
 	}
+
+	public Display getDisplay(){
+	    return display;
+    }
 
 	public Thread getThread(){
 		return thread;

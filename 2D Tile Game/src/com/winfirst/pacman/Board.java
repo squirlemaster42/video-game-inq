@@ -8,7 +8,7 @@ public class Board {
 	
 	private Handler handler;
 	private Pacman player;
-	private int [][] path;
+	private int[][] path;
 	
 	public Board(Handler handler) {
 		this.handler = handler;
@@ -17,7 +17,7 @@ public class Board {
 		
 	}
 	
-	public int [][] buildMap(int[][] a) {
+	public int[][] buildMap(int[][] a) {
 		/*
 		 * Creates first row wall
 		 */
