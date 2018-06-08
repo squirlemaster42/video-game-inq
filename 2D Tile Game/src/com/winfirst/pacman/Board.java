@@ -12,7 +12,7 @@ public class Board {
 	
 	public Board(Handler handler) {
 		this.handler = handler;
-		this.player = new Pacman(handler, 50.0, 50.0, 10, 10, 0, 0);
+		this.player = new Pacman(handler, 50.0f, 50.0f, 10, 10, 0, 0);
 		
 	}
 	

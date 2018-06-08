@@ -6,6 +6,7 @@ import java.awt.image.BufferStrategy;
 import com.winfirst.graphics.Display;
 import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
+import com.winfirst.pacman.PacManState;
 import com.winfirst.pong.PongState;
 import com.winfirst.space.SpaceState;
 import com.winfirst.states.GameState;
@@ -34,6 +35,7 @@ public class Game implements Runnable{
 	private State pongState;
 	private State spaceState;
 	private State tetrisState;
+	private State pacManState;
 	
 	//Input
 	private KeyManager keyManager;
@@ -64,7 +66,8 @@ public class Game implements Runnable{
 		pongState = new PongState(handler);
 		spaceState = new SpaceState(handler);
 		tetrisState = new TetrisState(handler);
-		State.setState(PacManState);
+		pacManState = new PacManState(handler);
+		State.setState(pacManState);
 	}
 	
 	
