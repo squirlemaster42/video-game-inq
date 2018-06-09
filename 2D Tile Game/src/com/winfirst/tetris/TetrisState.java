@@ -6,7 +6,9 @@ package com.winfirst.tetris;
 import com.winfirst.states.State;
 import com.winfirst.utils.Handler;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -81,6 +83,11 @@ public class TetrisState extends State {
 
     private long score;
     private Color[][] board;
+
+    public TetrisState(Handler handler) {
+        super(handler);
+        init();
+    }
 
     private void init(){
         board = new Color[12][24];
@@ -212,21 +219,16 @@ public class TetrisState extends State {
         }
     }
 
-    public TetrisState(Handler handler) {
-        super(handler);
-
-    }
-
     @Override
     public void tick() {
         if(handler.getKeyManager().up){
-
+            this.rotate(-1);
         }else if(handler.getKeyManager().down){
-
-        }else if(handler.getKeyManager().right){
-
+            this.rotate(1);
         }else if(handler.getKeyManager().left){
-
+            this.move(-1);
+        }else if(handler.getKeyManager().right){
+            this.move(1);
         }
 
         this.dropDown();
