@@ -84,6 +84,14 @@ public class TetrisState extends State {
     private long score;
     private Color[][] board;
 
+    private long totalTicks;
+
+    //Key states
+    private boolean rightPressed;
+    private boolean leftPressed;
+    private boolean upPressed;
+    private boolean downPressed;
+
     public TetrisState(Handler handler) {
         super(handler);
         init();
@@ -221,21 +229,53 @@ public class TetrisState extends State {
 
     @Override
     public void tick() {
-        if(handler.getKeyManager().up){
+        totalTicks++;
+
+        if(handler.getKeyManager().up && !upPressed){
             this.rotate(-1);
-        }else if(handler.getKeyManager().down){
+            upPressed = true;
+        }else if(handler.getKeyManager().down && !downPressed){
             this.rotate(1);
-        }else if(handler.getKeyManager().left){
+            downPressed = true;
+        }else if(handler.getKeyManager().left && !leftPressed){
             this.move(-1);
-        }else if(handler.getKeyManager().right){
+            leftPressed = true;
+        }else if(handler.getKeyManager().right && !rightPressed){
             this.move(1);
+            rightPressed = true;
+        }else if(handler.getKeyManager().space){
+            if(totalTicks % 5 == 0){
+                dropDown();
+            }
         }
 
-        this.dropDown();
+        if(!handler.getKeyManager().up){
+            upPressed = false;
+        }
+
+        if(!handler.getKeyManager().down){
+            downPressed = false;
+        }
+
+        if(!handler.getKeyManager().left){
+            leftPressed = false;
+        }
+
+        if(!handler.getKeyManager().right){
+            rightPressed = false;
+        }
+
+        if(totalTicks % 60 == 0){
+            this.dropDown();
+        }
+
     }
 
     @Override
     public void render(Graphics g) {
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, handler.getWidth(), handler.getHeight());
+
         // Paint the board
         g.fillRect(0, 0, 26*12, 26*23);
         for (int i = 0; i < 12; i++) {
