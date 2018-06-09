@@ -32,6 +32,47 @@ public class Board {
 		for(int colwall = 20; colwall < a.length; colwall++)
 			a[colwall][0] = 5;
 		
+		// walls in maze part
+		for(int wall = 2; wall < 5; wall ++) {
+			for (int wallcol = 2; wallcol < 6; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 2; wall < 5; wall ++) {
+			for (int wallcol = 7; wallcol < 12; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for (int wall = 1; wall < 5; wall++) {
+			a[wall][13] = 5;
+			a[wall][14] = 5;
+		}
+		
+		for(int wall = 2; wall < 5; wall ++) {
+			for (int wallcol = 16; wallcol < 21; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 2; wall < 5; wall ++) {
+			for (int wallcol = 22; wallcol < 26; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+
+		// WORKING ON NOW
+		for(int wall = 6; wall < 8; wall ++) {
+			for (int wallcol = 2; wallcol < 6; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 6; wall < 13; wall ++) {
+			for (int wallcol = 7; wallcol < 9; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 6; wall < 8; wall ++) {
+			for (int wallcol = 22; wallcol < 26; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
 		/*
 		 * creates wall for last column
 		 */
@@ -43,26 +84,46 @@ public class Board {
 		/*
 		 * First Row
 		 */
-		for (int dotLine = 1; dotLine < 13; dotLine++) {
-			a[1][dotLine] = 1;
-		}
-		a[1][13] = 5;
-		for (int dotLine = 14; dotLine < 26; dotLine++) {
-			a[1][dotLine] = 1;
-		}
 		
-		/*
-		 * Last Rows
-		 */
-		for (int dotLine = 1; dotLine < 26; dotLine++)
-			a[31][dotLine] = 1;
-		for (int dotLine = 1; dotLine < a[30].length - 1; dotLine++)
-			a[30][dotLine] = 1;
+		for(int wallLine = 2; wallLine < 6; wallLine++)
+			a[2][wallLine] = 5;
+		
+		
+		// fills rest of blanks with dots
+		// Not taking into account the side openings yet
+		for (int row = 0; row < a.length; row++) {
+			for (int col = 0; col < a[row].length; row++) {
+				if(a[row][col] == 0 && !(row <= 19 && row >= 10))
+					a[row][col] = 1;
+			}
+		}	
+		
+		a[3][1] = 4;
+		a[3][25] = 4;
+		a[23][1] = 4;
+		a[23][25] = 4;
+			
 		return a;
 	}
 	public void tick() {
 		player.tick();
 	}
+	
+	public boolean isWon(int [][] lst) {
+		int numDots = 0;
+		for (int row = 0; row < lst.length; row++) {
+			for (int col = 0; col < lst[row].length; row++) {
+				if(lst[row][col] == 1) {
+					numDots++;
+				}
+			}
+		}
+		if (numDots > 0)
+			return false;
+		
+		else return true;
+		}
+
 	
 	public void render(Graphics g) {
 		g.setColor(Color.BLACK);
