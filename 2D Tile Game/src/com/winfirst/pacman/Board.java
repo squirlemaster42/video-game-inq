@@ -13,7 +13,7 @@ public class Board {
 	public Board(Handler handler) {
 		this.handler = handler;
 		this.player = new Pacman(handler, 500.0f, 500.0f, 25, 25, 0, 0);
-		path = new int [30][27];
+		path = new int [31][27];
 		
 	}
 	
@@ -86,7 +86,7 @@ public class Board {
 			for (int wallcol = 9; wallcol < 12; wallcol ++)
 				a[wall][wallcol] = 5;
 		}
-		for(int wall = 9; wall < 11; wall ++) {
+		for(int wall = 8; wall < 11; wall ++) {
 			a[wall][13] = 5;
 			a[wall][14] = 5;
 		}
@@ -113,7 +113,80 @@ public class Board {
 			for (int wallcol = 10; wallcol < 18; wallcol ++)
 				a[wall][wallcol] = 5;
 		}
+		// second half
 		
+		for(int wall = 21; wall < 23; wall ++) {
+			for (int wallcol = 2; wallcol < 6; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 21; wall < 23; wall ++) {
+			for (int wallcol = 7; wallcol < 12; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 19; wall < 23; wall ++) {
+			a[wall][13] = 5;
+			a[wall][14] = 5;
+		}
+		
+		for(int wall = 21; wall < 23; wall ++) {
+			for (int wallcol = 16; wallcol < 21; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 21; wall < 23; wall ++) {
+			for (int wallcol = 22; wallcol < 26; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 23; wall < 26; wall ++) {
+			for (int wallcol = 4; wallcol < 6; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 23; wall < 26; wall ++) {
+			for (int wallcol = 22; wallcol < 24; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		for(int wall = 24; wall < 26; wall ++) {
+			for (int wallcol = 25; wallcol < 27; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 24; wall < 26; wall ++) {
+			for (int wallcol = 0; wallcol < 3; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 24; wall < 26; wall ++) {
+			for (int wallcol = 10; wallcol < 18; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 26; wall < 29; wall ++) {
+			a[wall][13] = 5;
+			a[wall][14] = 5;
+		}
+		
+		for(int wall = 27; wall < 29; wall ++) {
+			for (int wallcol = 2; wallcol < 12; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 27; wall < 29; wall ++) {
+			for (int wallcol = 16; wallcol < 26; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 24; wall < 27; wall ++) {
+			for (int wallcol = 7; wallcol < 9; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		for(int wall = 24; wall < 27; wall ++) {
+			for (int wallcol = 19; wallcol < 21; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
 		
 		/*
 		 * creates wall for last column
