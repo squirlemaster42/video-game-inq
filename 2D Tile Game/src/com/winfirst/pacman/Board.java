@@ -32,7 +32,7 @@ public class Board {
 		for(int colwall = 20; colwall < a.length; colwall++)
 			a[colwall][0] = 5;
 		
-		// walls in maze part
+		//  First half of walls in maze part
 		for(int wall = 2; wall < 5; wall ++) {
 			for (int wallcol = 2; wallcol < 6; wallcol ++)
 				a[wall][wallcol] = 5;
@@ -58,7 +58,6 @@ public class Board {
 				a[wall][wallcol] = 5;
 		}
 
-		// WORKING ON NOW
 		for(int wall = 6; wall < 8; wall ++) {
 			for (int wallcol = 2; wallcol < 6; wallcol ++)
 				a[wall][wallcol] = 5;
@@ -73,6 +72,49 @@ public class Board {
 			for (int wallcol = 22; wallcol < 26; wallcol ++)
 				a[wall][wallcol] = 5;
 		}
+		
+		for(int wall = 6; wall < 8; wall ++) {
+			for (int wallcol = 10; wallcol < 18; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 6; wall < 13; wall ++) {
+			for (int wallcol = 19; wallcol < 21; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		for(int wall = 9; wall < 11; wall ++) {
+			for (int wallcol = 9; wallcol < 12; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		for(int wall = 9; wall < 11; wall ++) {
+			a[wall][13] = 5;
+			a[wall][14] = 5;
+		}
+		for(int wall = 6; wall < 13; wall ++) {
+			for (int wallcol = 19; wallcol < 21; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 9; wall < 11; wall ++) {
+			for (int wallcol = 16; wallcol < 20; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 15; wall < 20; wall ++) {
+			for (int wallcol = 7; wallcol < 9; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		for(int wall = 15; wall < 20; wall ++) {
+			for (int wallcol = 19; wallcol < 21; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		for(int wall = 18; wall < 20; wall ++) {
+			for (int wallcol = 10; wallcol < 18; wallcol ++)
+				a[wall][wallcol] = 5;
+		}
+		
+		
 		/*
 		 * creates wall for last column
 		 */
