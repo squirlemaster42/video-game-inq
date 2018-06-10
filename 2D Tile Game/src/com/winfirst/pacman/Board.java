@@ -8,11 +8,19 @@ public class Board {
 	
 	private Handler handler;
 	private Pacman player;
+	private Ghost ghost1;
+	private Ghost ghost2;
+	private Ghost ghost3;
+	private Ghost ghost4;
 	private int[][] path;
 	
 	public Board(Handler handler) {
 		this.handler = handler;
 		this.player = new Pacman(handler, 500.0f, 500.0f, 25, 25, 0, 0);
+		this.ghost1 = new Ghost(handler, 600.0f, 500.0f, 25, 25, 0, 0);
+		this.ghost2 = new Ghost(handler, 650.0f, 500.0f, 25, 25, 0, 0);
+		this.ghost3 = new Ghost(handler, 700.0f, 500.0f, 25, 25, 0, 0);
+		this.ghost4 = new Ghost(handler, 750.0f, 500.0f, 25, 25, 0, 0);
 		path = new int [31][27];
 		
 	}
