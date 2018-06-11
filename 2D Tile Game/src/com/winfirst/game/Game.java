@@ -8,6 +8,7 @@ import java.util.Map;
 import com.winfirst.graphics.Display;
 import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
+import com.winfirst.input.MouseManager;
 import com.winfirst.pacman.PacManState;
 import com.winfirst.pong.PongState;
 import com.winfirst.space.SpaceState;
@@ -41,6 +42,7 @@ public class Game implements Runnable{
 	
 	//Input
 	private KeyManager keyManager;
+	private MouseManager mouseManager;
 	
 	//Camera
 	private GameCamera gameCamera;
@@ -53,11 +55,16 @@ public class Game implements Runnable{
 		this.height = height;
 		this.title = title;
 		keyManager = new KeyManager();
+		mouseManager = new MouseManager();
 	}
 	
 	private void init(){
 		display = new Display(title, width, height);
-		display.getFrame().addKeyListener(keyManager);
+        display.getFrame().addKeyListener(keyManager);
+        display.getFrame().addMouseListener(mouseManager);
+        display.getFrame().addMouseMotionListener(mouseManager);
+        display.getCanvas().addMouseListener(mouseManager);
+        display.getCanvas().addMouseMotionListener(mouseManager);
 		Assets.init();
 		
 		handler = new Handler(this);
@@ -145,7 +152,15 @@ public class Game implements Runnable{
 	public KeyManager getKeyManager(){
 		return keyManager;
 	}
-	
+
+	public MouseManager getMouseManager(){
+	    return mouseManager;
+    }
+
+    public void setState(State state){
+	    State.setState(state);
+    }
+
 	public GameCamera getGameCamera(){
 		return gameCamera;
 	}
