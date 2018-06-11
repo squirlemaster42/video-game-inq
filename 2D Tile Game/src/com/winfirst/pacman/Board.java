@@ -17,11 +17,12 @@ public class Board {
 	public Board(Handler handler) {
 		this.handler = handler;
 		this.player = new Pacman(handler, 500.0f, 500.0f, 25, 25, 0, 0);
-		this.ghost1 = new Ghost(handler, 600.0f, 500.0f, 25, 25, 0, 0);
-		this.ghost2 = new Ghost(handler, 650.0f, 500.0f, 25, 25, 0, 0);
-		this.ghost3 = new Ghost(handler, 700.0f, 500.0f, 25, 25, 0, 0);
-		this.ghost4 = new Ghost(handler, 750.0f, 500.0f, 25, 25, 0, 0);
+		this.ghost1 = new Ghost(handler, 600.0f, 500.0f, 25, 25, 0, 0, player);
+		this.ghost2 = new Ghost(handler, 650.0f, 500.0f, 25, 25, 0, 0, player);
+		this.ghost3 = new Ghost(handler, 700.0f, 500.0f, 25, 25, 0, 0, player);
+		this.ghost4 = new Ghost(handler, 750.0f, 500.0f, 25, 25, 0, 0, player);
 		path = new int [31][27];
+		
 		
 	}
 	
@@ -158,7 +159,7 @@ public class Board {
 				a[wall][wallcol] = 5;
 		}
 		for(int wall = 24; wall < 26; wall ++) {
-			for (int wallcol = 25; wallcol < 27; wallcol ++)
+			for (int wallcol = 25; wallcol < 26; wallcol ++)
 				a[wall][wallcol] = 5;
 		}
 		
@@ -230,6 +231,19 @@ public class Board {
 	}
 	public void tick() {
 		player.tick();
+		ghost1.tick();
+		ghost2.tick();
+		ghost3.tick();
+		ghost4.tick();
+		/*
+		if(checkEntityCollision(x, 0, player)){
+            player.setY(-50);
+        }
+
+        if(checkEntityCollision(ghost1.getX(), ghost1.getY(), player)){
+            player.setY(-50);
+        }
+*/
 	}
 	
 	public boolean isWon(int [][] lst) {
@@ -252,6 +266,12 @@ public class Board {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, handler.getGame().getWidth(), handler.getGame().getHeight());
 		player.render(g);
+		ghost1.render(g);
+		ghost2.render(g);
+		ghost3.render(g);
+		ghost4.render(g);
+		
 	}
 	
+
 }

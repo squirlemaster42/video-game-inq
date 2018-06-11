@@ -158,7 +158,11 @@ public class TetrisState extends State {
         if (!collidesAt(pieceOrigin.x, pieceOrigin.y + 1, rotation)) {
             pieceOrigin.y += 1;
         } else {
-            fixToBoard();
+        	if(pieceOrigin.y == 0) {
+        		System.out.println("You Loose");
+        	}else {
+        		fixToBoard();
+        	}
         }
         handler.getGame().getDisplay().getCanvas().repaint();
     }

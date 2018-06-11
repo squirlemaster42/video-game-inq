@@ -12,6 +12,7 @@ public class PacManState extends State{
 	public PacManState (Handler handler) {
 		super(handler);
 		board = new Board(handler);
+		
 	}
 	
 	public void tick() {
@@ -20,5 +21,6 @@ public class PacManState extends State{
 	
 	public void render(Graphics g) {
 		board.render(g);
+		
 	}
 }
