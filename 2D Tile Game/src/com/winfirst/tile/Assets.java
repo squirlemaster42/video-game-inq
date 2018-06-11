@@ -19,7 +19,7 @@ public class Assets {
 	
 	public static void init(){
 		SpriteSheet ground = new SpriteSheet(ImageLoader.loadImage("/textures/ground.png"));
-		SpriteSheet MainMenu = new SpriteSheet(ImageLoader.loadImage("/textures/MainMenu.png"));
+		SpriteSheet MainMenu = new SpriteSheet(ImageLoader.loadImage("/textures/MainMenuScreen.png"));
 		SpriteSheet character = new SpriteSheet(ImageLoader.loadImage("/textures/Char.png"));
 		SpriteSheet spaceSheet = new SpriteSheet(ImageLoader.loadImage("/textures/SpaceGameRotated.png"));
 		
@@ -52,7 +52,7 @@ public class Assets {
 		
 		grass = ground.crop(0, 0, width, height);
 		dirt = ground.crop(width, 0, width, height);
-		mainMenu = MainMenu.crop(0, 0, 640, 360);
+		mainMenu = MainMenu.crop(0, 0, 1280, 720);
 		rock = ground.crop(width * 2, 0, width, height);
 		stoneBrick = ground.crop(width * 3, 0, width, height);
 		tree = ground.crop(0, height, width, height);

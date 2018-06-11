@@ -2,6 +2,8 @@ package com.winfirst.game;
 
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.winfirst.graphics.Display;
 import com.winfirst.graphics.GameCamera;
@@ -62,13 +64,18 @@ public class Game implements Runnable{
 		gameCamera = new GameCamera(handler, 0, 0);
 		
 		gameState = new GameState(handler);
-		menuState = new MainMenu(handler);
 		pongState = new PongState(handler);
 		spaceState = new SpaceState(handler);
 		tetrisState = new TetrisState(handler);
 		pacManState = new PacManState(handler);
+		Map<String, State> stateMap = new HashMap<>();
+		stateMap.put("Tetris", tetrisState);
+		stateMap.put("Pacman", pacManState);
+		stateMap.put("Pong", pongState);
+		stateMap.put("Space", spaceState);
+		menuState = new MainMenu(handler, stateMap);
 		//State.setState(pacManState);
-		State.setState(tetrisState);
+		State.setState(menuState);
 	}
 	
 	
