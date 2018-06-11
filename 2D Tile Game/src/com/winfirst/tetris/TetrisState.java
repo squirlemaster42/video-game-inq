@@ -7,6 +7,7 @@ import com.winfirst.states.State;
 import com.winfirst.utils.Handler;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
@@ -92,6 +93,8 @@ public class TetrisState extends State {
     private boolean upPressed;
     private boolean downPressed;
 
+    private boolean gameLost = false;
+    
     public TetrisState(Handler handler) {
         super(handler);
         init();
@@ -159,7 +162,7 @@ public class TetrisState extends State {
             pieceOrigin.y += 1;
         } else {
         	if(pieceOrigin.y == 0) {
-        		System.out.println("You Loose");
+        		gameLost = true;
         	}else {
         		fixToBoard();
         	}
@@ -293,6 +296,12 @@ public class TetrisState extends State {
         g.setColor(Color.WHITE);
         g.drawString("" + score, 19*12, 25);
 
+        if(gameLost) {
+        	g.setFont(new Font("TimesRoman", Font.PLAIN, 32));
+        	g.drawString("You Loose", 400, 300);
+        	g.drawString("Your Score: " + this.score, 400, 350);
+        }
+        
         // Draw the currently falling piece
         drawPiece(g);
     }
