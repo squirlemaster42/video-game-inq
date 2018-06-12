@@ -147,7 +147,6 @@ public class TetrisState extends State {
         if (!collidesAt(pieceOrigin.x, pieceOrigin.y, newRotation)) {
             rotation = newRotation;
         }
-        handler.getGame().getDisplay().getCanvas().repaint();
     }
 
     // Move the piece left or right
@@ -169,7 +168,6 @@ public class TetrisState extends State {
         		fixToBoard();
         	}
         }
-        handler.getGame().getDisplay().getCanvas().repaint();
     }
 
     // Make the dropping piece part of the board, so it is available for collision detection
@@ -304,6 +302,7 @@ public class TetrisState extends State {
 
         if(gameLost && timePassed >= 180){
             timePassed = 0;
+            gameLost = false;
             init();
             handler.getGame().setState(handler.getGame().getState("Menu"));
         }else if(gameLost) {
