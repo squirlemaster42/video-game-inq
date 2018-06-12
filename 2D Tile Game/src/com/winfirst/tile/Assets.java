@@ -7,7 +7,7 @@ import com.winfirst.graphics.SpriteSheet;
 
 public class Assets {
 	
-	public static BufferedImage tree, dirt, grass, mainMenu, rock, stoneBrick, spaceShip, alien;
+	public static BufferedImage tree, dirt, grass, mainMenu, rock, stoneBrick, spaceShip, alien, map;
 	public static BufferedImage[] playerDown;
 	public static BufferedImage[] playerUp;
 	public static BufferedImage[] playerLeft;
@@ -20,6 +20,7 @@ public class Assets {
 	public static void init(){
 		SpriteSheet ground = new SpriteSheet(ImageLoader.loadImage("/textures/ground.png"));
 		SpriteSheet MainMenu = new SpriteSheet(ImageLoader.loadImage("/textures/MainMenuScreen.png"));
+		SpriteSheet Map = new SpriteSheet(ImageLoader.loadImage("/textures/pacmanmap.jpg"));
 		SpriteSheet character = new SpriteSheet(ImageLoader.loadImage("/textures/Char.png"));
 		SpriteSheet spaceSheet = new SpriteSheet(ImageLoader.loadImage("/textures/SpaceGameRotated.png"));
 		
@@ -53,11 +54,13 @@ public class Assets {
 		grass = ground.crop(0, 0, width, height);
 		dirt = ground.crop(width, 0, width, height);
 		mainMenu = MainMenu.crop(0, 0, 1280, 720);
+		map = Map.crop(0, 0, 655, 725);
 		rock = ground.crop(width * 2, 0, width, height);
 		stoneBrick = ground.crop(width * 3, 0, width, height);
 		tree = ground.crop(0, height, width, height);
 		spaceShip = spaceSheet.crop(0, 0, 64, 64);
 		alien = ground.crop(width, height, width, height);
+		
 	}
 
 }

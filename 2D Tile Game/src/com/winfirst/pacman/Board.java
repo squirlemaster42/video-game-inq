@@ -1,5 +1,9 @@
 package com.winfirst.pacman;
 
+import java.awt.image.BufferedImage;
+import com.winfirst.graphics.ImageLoader;
+import com.winfirst.graphics.SpriteSheet;
+import com.winfirst.tile.Assets;
 import com.winfirst.utils.Handler;
 
 import java.awt.*;
@@ -13,15 +17,16 @@ public class Board {
 	private Ghost ghost3;
 	private Ghost ghost4;
 	private int[][] path;
-	
+
 	public Board(Handler handler) {
 		this.handler = handler;
 		this.player = new Pacman(handler, 500.0f, 500.0f, 25, 25, 0, 0);
-		this.ghost1 = new Ghost(handler, 600.0f, 500.0f, 25, 25, 0, 0, player);
-		this.ghost2 = new Ghost(handler, 650.0f, 500.0f, 25, 25, 0, 0, player);
-		this.ghost3 = new Ghost(handler, 700.0f, 500.0f, 25, 25, 0, 0, player);
-		this.ghost4 = new Ghost(handler, 750.0f, 500.0f, 25, 25, 0, 0, player);
+		this.ghost1 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
+		this.ghost2 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
+		this.ghost3 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
+		this.ghost4 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
 		path = new int [31][27];
+		//path = buildMap(path);
 		
 		
 	}
@@ -30,6 +35,7 @@ public class Board {
 		/*
 		 * Creates first row wall
 		 */
+		
 		for (int wall1 = 0; wall1 <= a[0].length; wall1++) {
 			a[0][wall1] = 5;
 			}
@@ -246,6 +252,8 @@ public class Board {
 */
 	}
 	
+	
+	
 	public boolean isWon(int [][] lst) {
 		int numDots = 0;
 		for (int row = 0; row < lst.length; row++) {
@@ -265,11 +273,13 @@ public class Board {
 	public void render(Graphics g) {
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, handler.getGame().getWidth(), handler.getGame().getHeight());
+		g.drawImage(Assets.map ,300,0, null);
 		player.render(g);
 		ghost1.render(g);
 		ghost2.render(g);
 		ghost3.render(g);
 		ghost4.render(g);
+
 		
 	}
 	
