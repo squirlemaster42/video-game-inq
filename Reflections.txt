@@ -1,15 +1,48 @@
 Jakob Misbach 1:
 
-At the moment, we are developing the research on our topic as well as working on the code for our games. We currently have Pong 90% complete, Space Invaders 50% complete, and are starting work on Tetris. Have a plan of how the code will be structured for both games that are not close to completion. For our research, all of ours sources have been annotated, and we are beginning to organize the information into categories that will be used to answer specific aspects of our questions. From there, we will be organizing the information based on game, and creating museum cards that will be placed on top of a mock-up of a game cartridge. Before next class, I would like to solve the bug with Space Invaders where all of the Aliens shoot at the same time. In addition, I would like to continue work on tetris, and get it to a point where pieces are added to an array, and start to work on the graphics for the game. One problem we have been encountering with our project is not being able to work on code in class. We are unable to write, and test code while in class because the Chromebooks do not have a development environment for Java. However, this has not been a large problem because we have been able to focus on the research aspect of our project in class, and work on the software aspect at home. For next class, we will focus on organizing the information gathered from our research, and begin to form an answer to our question. If we have time, we will then break that answer apart and write about how specific games, and companies have had had an impact on the industry. My contributions to our group have included setting up a GitHub for our team to help organize code, and information. In addition, GitHub tracks contributions and information pertaining to the process of creating our final product. This will help our group create the presentation on the process of creating our project. In addition, I have set out the framework for creating the games that will be used in our final project, and begun to write code for Pong, Space Invaders, and Tetris. Before next class, I will continue to work on the code for our games.
+At the moment, we are developing the research on our topic as well as working on the code for our games. We currently have Pong 90%
+complete, Space Invaders 50% complete, and are starting work on Tetris. Have a plan of how the code will be structured for both games
+that are not close to completion. For our research, all of ours sources have been annotated, and we are beginning to organize the 
+information into categories that will be used to answer specific aspects of our questions. From there, we will be organizing the 
+information based on game, and creating museum cards that will be placed on top of a mock-up of a game cartridge. Before next class, I 
+would like to solve the bug with Space Invaders where all of the Aliens shoot at the same time. In addition, I would like to continue 
+work on tetris, and get it to a point where pieces are added to an array, and start to work on the graphics for the game. One problem we 
+have been encountering with our project is not being able to work on code in class. We are unable to write, and test code while in class 
+because the Chromebooks do not have a development environment for Java. However, this has not been a large problem because we have been 
+able to focus on the research aspect of our project in class, and work on the software aspect at home. For next class, we will focus on 
+organizing the information gathered from our research, and begin to form an answer to our question. If we have time, we will then break 
+that answer apart and write about how specific games, and companies have had had an impact on the industry. My contributions to our 
+group have included setting up a GitHub for our team to help organize code, and information. In addition, GitHub tracks contributions 
+and information pertaining to the process of creating our final product. This will help our group create the presentation on the process 
+of creating our project. In addition, I have set out the framework for creating the games that will be used in our final project, and 
+begun to write code for Pong, Space Invaders, and Tetris. Before next class, I will continue to work on the code for our games.
 
 Jakob Misbach 2:
 
-Currently we have had success is developing Space Invaders and Pong. Both games are working fairly well at the moment and are really just waiting to have scoring implemented. As for our research, we have annotated all of our sources, and are working on finalizing our cards that will go on top of the game cartridges. For the process portion of our project, we are going to use GitHub to show the progression of our code and are working to determine if we can do the same for our research. There was a bug with our code for Tetris that caused the board to only be 10 x 10 instead of 22 by 10. I worked to fix this bug in class today, and need to test it when I get home. For next class, me and Spencer will be working to start PacMan and finish up Tetris. Over the weekend, we will work to get together to gather the rest of our probs, and begin work on our mockup Atari. I also need to determine if our code will run on the Raspberry Pi, and test that it will work with the TV Spencer has. I need to gather the stand for the monitor that I have and make sure that I have all of the mounting hardware required for the stand. Spencer and I need to finalize all of the furniture we will be using, and begin to gather all of the materials. Overall, we are making good progress, and will be able to finish the project for Wednesday. We just need to continue to make headway on the software portion of the project so we have time to squash any bugs that arise.
+Currently we have had success is developing Space Invaders and Pong. Both games are working fairly well at the moment and are really 
+just waiting to have scoring implemented. As for our research, we have annotated all of our sources, and are working on finalizing our 
+cards that will go on top of the game cartridges. For the process portion of our project, we are going to use GitHub to show the 
+progression of our code and are working to determine if we can do the same for our research. There was a bug with our code for Tetris 
+that caused the board to only be 10 x 10 instead of 22 by 10. I worked to fix this bug in class today, and need to test it when I get 
+home. For next class, me and Spencer will be working to start PacMan and finish up Tetris. Over the weekend, we will work to get 
+together to gather the rest of our probs, and begin work on our mockup Atari. I also need to determine if our code will run on the 
+Raspberry Pi, and test that it will work with the TV Spencer has. I need to gather the stand for the monitor that I have and make sure 
+that I have all of the mounting hardware required for the stand. Spencer and I need to finalize all of the furniture we will be using, 
+and begin to gather all of the materials. Overall, we are making good progress, and will be able to finish the project for Wednesday. We 
+just need to continue to make headway on the software portion of the project so we have time to squash any bugs that arise.
 
 Spencer Nauss 1:
 
-We are currently working on creating the games for our project, and categorizing our sources into main ideas. We also are creating fake cartridges of the games we are making, and have information about each one around them, and how the games affected America. Before next class, I have to get all of the cartridge images ready, and work on fixing a bug where the aliens in Space Invaders don’t all shoot at the same time. Next class I will likely continue to move information into main ideas in order to strengthen the answer to the thesis question. I learned that nintendo created the seal of quality so Americans will develop trust in their products. I have been working on annotations, and beginning to fix bugs in the code we are working on.
+We are currently working on creating the games for our project, and categorizing our sources into main ideas. We also are creating fake 
+cartridges of the games we are making, and have information about each one around them, and how the games affected America. Before next 
+class, I have to get all of the cartridge images ready, and work on fixing a bug where the aliens in Space Invaders don’t all shoot at 
+the same time. Next class I will likely continue to move information into main ideas in order to strengthen the answer to the thesis 
+question. I learned that nintendo created the seal of quality so Americans will develop trust in their products. I have been working on 
+annotations, and beginning to fix bugs in the code we are working on.
 
 Spencer Nause 2:
 
-We have finished coding Space Invaders, and Pong. Jakob is working on Tetris, and I am going to be starting Pacman. In the next class, Before next class, I have to finish pacman, set up the cartridges and print them out with the information that goes with each one. Meet up with Jakob to create the fake Atari 2600. A challenge will definitely be getting the ghosts api to work. As well as figuring out the algorithms for Tetris. I’ve learned the impact of these games, and how they were important in terms of business, and American Lives.
+We have finished coding Space Invaders, and Pong. Jakob is working on Tetris, and I am going to be starting Pacman. In the next class, 
+Before next class, I have to finish pacman, set up the cartridges and print them out with the information that goes with each one. Meet 
+up with Jakob to create the fake Atari 2600. A challenge will definitely be getting the ghosts api to work. As well as figuring out the 
+algorithms for Tetris. I’ve learned the impact of these games, and how they were important in terms of business, and American Lives.
