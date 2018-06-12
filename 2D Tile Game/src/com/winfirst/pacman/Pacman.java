@@ -20,23 +20,53 @@ public class Pacman extends Entity {
 		if (handler.getKeyManager().up) {
 			ymove = -3;
 			xmove = 0;
+			arrRow --;
 		}
 		if (handler.getKeyManager().down) {
 			ymove = 3;
 			xmove = 0;
+			arrRow ++;
 		}
 		if (handler.getKeyManager().left) {
 			xmove = -3;
 			ymove = 0;
+			arrCol --;
 		}
 		if (handler.getKeyManager().right) {
 			xmove = 3;
 			ymove = 0;
+			arrCol ++;
 		}
 		x += xmove;
 		y += ymove;
 	}
+	public boolean canMoveUp(int[][] path) {
+		if (path[arrRow - 1][arrCol] == 5)
+			return false;
+		else
+			return true;
+	}
 	
+	public boolean canMoveDown(int[][] path) {
+		if (path[arrRow + 1][arrCol] == 5)
+			return false;
+		else
+			return true;
+	}
+	
+	public boolean canMoveLeft(int[][] path) {
+		if (path[arrRow][arrCol - 1] == 5)
+			return false;
+		else
+			return true;
+	}
+	
+	public boolean canMoveRight(int[][] path) {
+		if (path[arrRow][arrCol + 1] == 5)
+			return false;
+		else
+			return true;
+	}
 	public void render(Graphics g) {
         g.setColor(Color.YELLOW);
         g.fillRect((int) x, (int) y, width, height);

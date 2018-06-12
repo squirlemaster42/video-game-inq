@@ -20,13 +20,13 @@ public class Board {
 
 	public Board(Handler handler) {
 		this.handler = handler;
-		this.player = new Pacman(handler, 500.0f, 500.0f, 25, 25, 0, 0);
+		this.player = new Pacman(handler, 450.0f, 550.0f, 25, 25, 0, 0);
 		this.ghost1 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
 		this.ghost2 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
 		this.ghost3 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
 		this.ghost4 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
 		path = new int [31][27];
-		//path = buildMap(path);
+		path = buildMap(path);
 		
 		
 	}
@@ -36,7 +36,7 @@ public class Board {
 		 * Creates first row wall
 		 */
 		
-		for (int wall1 = 0; wall1 <= a[0].length; wall1++) {
+		for (int wall1 = 0; wall1 < a[0].length; wall1++) {
 			a[0][wall1] = 5;
 			}
 		/*
@@ -204,6 +204,11 @@ public class Board {
 		}
 		
 		/*
+		 * Created Row wall at bottom
+		 */
+		for (int col = 0; col < a[30].length; col++)
+			a[30][col] = 5;
+		/*
 		 * creates wall for last column
 		 */
 		
@@ -218,11 +223,14 @@ public class Board {
 		for(int wallLine = 2; wallLine < 6; wallLine++)
 			a[2][wallLine] = 5;
 		
-		
+		//GhostBox
+		for(int wall = 12; wall < 17; wall++)
+			for (int colwall = 10; colwall < 18; colwall ++)
+				a[wall][colwall] = 5;
 		// fills rest of blanks with dots
 		// Not taking into account the side openings yet
 		for (int row = 0; row < a.length; row++) {
-			for (int col = 0; col < a[row].length; row++) {
+			for (int col = 0; col < a[row].length; col++) {
 				if(a[row][col] == 0 && !(row <= 19 && row >= 10))
 					a[row][col] = 1;
 			}
@@ -232,7 +240,7 @@ public class Board {
 		a[3][25] = 4;
 		a[23][1] = 4;
 		a[23][25] = 4;
-			
+		a[23][13] = 2;	
 		return a;
 	}
 	public void tick() {
