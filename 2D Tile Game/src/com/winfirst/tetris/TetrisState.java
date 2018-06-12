@@ -15,6 +15,8 @@ import java.util.Collections;
 
 public class TetrisState extends State {
 
+    private int timePassed = 0;
+
     private final Point[][][] Pieces = {
             // I-Piece
             {
@@ -296,10 +298,18 @@ public class TetrisState extends State {
         g.setColor(Color.WHITE);
         g.drawString("" + score, 19*12, 25);
 
-        if(gameLost) {
-        	g.setFont(new Font("TimesRoman", Font.PLAIN, 32));
-        	g.drawString("You Loose", 400, 300);
-        	g.drawString("Your Score: " + this.score, 400, 350);
+        if(gameLost){
+            timePassed++;
+        }
+
+        if(gameLost && timePassed >= 180){
+            timePassed = 0;
+            init();
+            handler.getGame().setState(handler.getGame().getState("Menu"));
+        }else if(gameLost) {
+            g.setFont(new Font("TimesRoman", Font.PLAIN, 32));
+            g.drawString("You Loose", 400, 300);
+            g.drawString("Your Score: " + this.score, 400, 350);
         }
         
         // Draw the currently falling piece
