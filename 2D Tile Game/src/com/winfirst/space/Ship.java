@@ -12,6 +12,7 @@ public class Ship extends Entity {
     private int xMove, yMove;
     private EntityManager entityManager;
     private int timeSinceLastShot = 0;
+    private Board board;
 
     public Ship(Handler handler, float x, float y, int width, int height, EntityManager entityManager) {
         super(handler, x, y, width, height);
@@ -27,7 +28,6 @@ public class Ship extends Entity {
         }else if(handler.getKeyManager().right && x < handler.getGame().getWidth() - width){
             x += xMove;
         }
-
         if(handler.getKeyManager().space && timeSinceLastShot > 20){
             entityManager.addEntity(new Laser(handler,(int) x + width / 2, (int) y - 10, 4, 10, entityManager));
             timeSinceLastShot = 0;

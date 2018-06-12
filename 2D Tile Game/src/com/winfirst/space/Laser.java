@@ -31,12 +31,6 @@ public class Laser extends Entity {
             entityManager.getEntities().remove(this);
             Entity collidedEntity = getCollideEntity(0, yMove, entityManager);
             entityManager.getEntities().remove(collidedEntity);
-
-            if(collidedEntity instanceof Alien){
-
-            }else if(collidedEntity instanceof Ship){
-
-            }
         }
 
         if(y < 0){
