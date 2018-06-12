@@ -1,0 +1,76 @@
+Red = game’s success in U.S
+Green = The video game market
+Video games were first released on the Atari System in 1973 and for apple 2C and apple 2Gs 
+Two Major Gaming Systems Sega and Nintendo
+Nintendo is current leader in handheld consoles.
+Super Nintendo continues selling from 1990 - 2000
+
+2. defined as games involving electronic technology in which real-time interactive game events are depicted graphically on a screen through pixel-based imaging. 
+
+Game Elements
+Conflict, rules, player ability, valued outcome
+
+Mainframe games, coin operated arcade games. home video game systems, hand-held portable games and game systems, and home computer games.
+
+
+3.   Spaceship shoots aliens down, get points
+
+4.  An image of a pacman game cabinet created in the 1980s
+
+5. Multi Billion dollar industry. By 1996 the video game industry had an estimated $2.6 billion in sales revenue From 2005 - 2009 the industry grew 7 times faster than the U.S Economy,
+Origins of video games 1960’s programmers developed games for mainframe computers, in 1962 the Massachusetts Institute of Technology created the game Spacewar!, the most famous mainframe game.
+
+6.  
+
+7.   Pacman is one of the most successful video game franchises. Tohru Iwatani, the game's creator, was staring at his pizza with two slices missing and came up with Pac-Man. By 1990: Earned more than 2.5 billion in quarters. It’s been published on multiple platforms since its release.
+
+9. Atari was founded in 1972 by Nolan Bushnell (1943-), an engineer who believed electronics could be adapted for entertainment. He invented the first video-game machine, Pong Atari created an equally popular home version in 1974.
+
+10. Game Boy was introduced in America in August 1989, it included Tetris which was an addicting game that played a big part in its popularity. By July 2001 Nintendo had sold 11.5 million Gameboys. Became the most popular video game system of all time. First major redesign in 2001 with Gameboy Advance. 2003 - Gameboy Advance SP
+
+11.    Nintendo Decided they would bring their console over to America. America saw it as just a fad. the American product came with a robot, named R.O.B to increase sales in America. They highlighted their console with quality games such as Mario Brothers. They created the Seal of Quality. There was no internet to give reviews on games, so Americans would trust their seal.
+
+12.
+First of platforming games 
+ In 1983, video games had been blamed for “increasing crime and school absenteeism, decreasing learning and concentration, and causing a mysterious ailment called video wrist,”
+Game Industry countered claims by saying they promoted dexterity and quick thinking, and Arcades were good for building social skills.
+
+13.
+Wide range of games
+Wide range of consoles and devices
+First computer game was Spacewar, developed at MIT in 1962
+First home console was the Magnavox Odyssey
+Contained 12 games, all variations of ping-pong
+100000 were sold by 1972
+By 1974, 150000 copies of pong were sold
+Game cartridge developed
+Realistic graphics began to gain popularity
+1993 rating system developed
+
+14.
+Games can be played on it
+Skill increases with practice
+Draws images
+Controlled by a player
+Cathode tube powers the screen
+
+15. 
+Generate vertical and horizontal pulses
+For drawing images in coordinate system
+Reduce cost
+Simplify control system
+Increase flexibility
+
+16.
+Joystick for generating x, y movement
+Make is easier for user to move object on screen
+Reduce fatigue
+Activates switches
+
+17. 
+Method utilizing singe motion control circuit or comparator for controlling display of moving image
+Object position counters go into ordering logic. 
+Display of video images
+Helps to move object on a screen
+Reduces number of electronics, complexity, and cost
+Improved system for moving objects on a screen
