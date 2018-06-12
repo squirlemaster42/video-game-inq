@@ -13,7 +13,9 @@ public class Ball extends Entity {
     private int counter = 4;
     private int startTick = 0;
     private int totalTicks = 0;
-    private final int endScore = 10;
+    private static final int endScore = 10;
+    private boolean gameWon = false;
+    private int timePassed = 0;
     public Ball(Handler handler, float x, float y, int width, Paddle[] paddles) {
         super(handler, x, y, width, width);
         xMove = 6;
@@ -36,23 +38,27 @@ public class Ball extends Entity {
         if (x < 0){
             xMove *= -1;
             paddles[0].score++;
-            if (isWon(paddles[0].score) == true) {
+            if (isWon(paddles[0].score)) {
             	xMove = 0;
             	yMove = 0;
-            }
-            else
             	resetBall();
+            }else{
+                resetBall();
+            }
+
         }
 
         if (x > handler.getGame().getWidth() - width){
             xMove *= -1;
             paddles[1].score++;
-            if (isWon(paddles[1].score) == true) {
+            if (isWon(paddles[1].score)) {
             	xMove = 0;
             	yMove = 0;
-            }
-            else
             	resetBall();
+            }else{
+                resetBall();
+            }
+
             
         }
 
@@ -89,12 +95,35 @@ public class Ball extends Entity {
                 runResetDraw = false;
             }
         }
+
+        if(isWon(paddles[0].score)){
+            g.setFont(new Font("TimesRoman", Font.PLAIN, 40));
+            g.drawString("Player 2 wins!", 685, 250);
+            gameWon = true;
+        }else if(isWon(paddles[1].score)){
+            g.setFont(new Font("TimesRoman", Font.PLAIN, 40));
+            g.drawString("Player 1 wins!", 685, 250);
+            gameWon = true;
+        }
+
+        if(gameWon){
+            timePassed++;
+        }
+
+        if(gameWon && timePassed >= 180){
+            paddles[0].score = 0;
+            paddles[1].score = 0;
+            timePassed = 0;
+            gameWon = false;
+            xMove = 6;
+            yMove = 6;
+            resetBall();
+            handler.getGame().setState(handler.getGame().getState("Menu"));
+        }
     }
-    public boolean isWon(int paddleScore) {
-    	if (paddleScore == endScore)
-    		return true;
-    	else 
-    		return false;
+
+    private boolean isWon(int paddleScore) {
+    	return paddleScore >= endScore;
     }
     
 

@@ -39,7 +39,8 @@ public class Game implements Runnable{
 	private State spaceState;
 	private State tetrisState;
 	private State pacManState;
-	
+	Map<String, State> stateMap;
+
 	//Input
 	private KeyManager keyManager;
 	private MouseManager mouseManager;
@@ -75,12 +76,13 @@ public class Game implements Runnable{
 		spaceState = new SpaceState(handler);
 		tetrisState = new TetrisState(handler);
 		pacManState = new PacManState(handler);
-		Map<String, State> stateMap = new HashMap<>();
+		stateMap = new HashMap<>();
 		stateMap.put("Tetris", tetrisState);
 		stateMap.put("Pacman", pacManState);
 		stateMap.put("Pong", pongState);
 		stateMap.put("Space", spaceState);
 		menuState = new MainMenu(handler, stateMap);
+		stateMap.put("Menu", menuState);
 		//State.setState(pacManState);
 		State.setState(menuState);
 	}
@@ -172,6 +174,10 @@ public class Game implements Runnable{
 	public int getHeight(){
 		return height;
 	}
+
+	public State getState(String name){
+	    return stateMap.get(name);
+    }
 
 	public Display getDisplay(){
 	    return display;
