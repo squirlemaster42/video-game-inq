@@ -20,14 +20,13 @@ public class Board {
 
 	public Board(Handler handler) {
 		this.handler = handler;
-		this.player = new Pacman(handler, 625.0f, 405.0f, 25, 25, 0, 0);
-		this.ghost1 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
-		this.ghost2 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
-		this.ghost3 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
-		this.ghost4 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
 		path = new int [31][27];
 		path = buildMap(path);
-		
+		this.player = new Pacman(handler, 625.0f, 405.0f, 25, 25, 23, 13, path);
+		this.ghost1 = new Ghost(handler, 580.0f, 300.0f, 25, 25, 11, 13, player, path);
+		this.ghost2 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 14, 12, player,path);
+		this.ghost3 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 14, 14, player,path);
+		this.ghost4 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 14, 16, player,path);
 		
 	}
 	
@@ -241,6 +240,10 @@ public class Board {
 		a[23][1] = 4;
 		a[23][25] = 4;
 		a[23][13] = 2;	
+		a[11][13] = 3;
+		a[14][12] = 3;
+		a[14][14] = 3;
+		a[14][16]= 3;
 		return a;
 	}
 	public void tick() {
