@@ -20,7 +20,7 @@ public class Board {
 
 	public Board(Handler handler) {
 		this.handler = handler;
-		this.player = new Pacman(handler, 450.0f, 550.0f, 25, 25, 0, 0);
+		this.player = new Pacman(handler, 625.0f, 405.0f, 25, 25, 0, 0);
 		this.ghost1 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
 		this.ghost2 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
 		this.ghost3 = new Ghost(handler, 600.0f, 300.0f, 25, 25, 0, 0, player);
