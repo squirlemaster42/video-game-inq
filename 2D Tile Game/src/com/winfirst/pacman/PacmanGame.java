@@ -185,6 +185,7 @@ public class PacmanGame extends Game {
         lives = 3;
         score = 0;
         setState(State.TITLE);
+        handler.getGame().setState(handler.getGame().getState("Menu"));
     }
 
 }
