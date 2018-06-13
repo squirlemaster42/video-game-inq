@@ -9,7 +9,7 @@ import com.winfirst.graphics.Display;
 import com.winfirst.graphics.GameCamera;
 import com.winfirst.input.KeyManager;
 import com.winfirst.input.MouseManager;
-import com.winfirst.pacman.PacManState;
+import com.winfirst.pacman.PacmanState;
 import com.winfirst.pong.PongState;
 import com.winfirst.space.SpaceState;
 import com.winfirst.states.GameState;
@@ -75,7 +75,7 @@ public class Game implements Runnable{
 		pongState = new PongState(handler);
 		spaceState = new SpaceState(handler);
 		tetrisState = new TetrisState(handler);
-		pacManState = new PacManState(handler);
+		pacManState = new PacmanState(handler);
 		stateMap = new HashMap<>();
 		stateMap.put("Tetris", tetrisState);
 		stateMap.put("Pacman", pacManState);
