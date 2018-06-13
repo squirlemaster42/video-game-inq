@@ -16,35 +16,46 @@ public class Pacman extends Entity {
 		this.arrRow = row;
 		this.arrCol = col;
 		this.path = map;
+		printList();
 	}
 		
 	public void tick() {
 		if (handler.getKeyManager().up && canMoveUp(path)) {
 			ymove = -3;
 			xmove = 0;
-			arrRow --;
+			if (arrRow > 0) 
+				arrRow --;
 		}
-		if (handler.getKeyManager().down && canMoveDown(path)) {
+		else if (handler.getKeyManager().down && canMoveDown(path)) {
 			ymove = 3;
 			xmove = 0;
-			arrRow ++;
+			if (arrRow < 30)
+				arrRow ++;
 		}
-		if (handler.getKeyManager().left && canMoveLeft(path)) {
+		else if (handler.getKeyManager().left && canMoveLeft(path)) {
 			xmove = -3;
 			ymove = 0;
-			arrCol --;
+			if (arrCol > 0)
+				arrCol --;
+			
 		}
-		if (handler.getKeyManager().right && canMoveRight(path)) {
+		else if (handler.getKeyManager().right && canMoveRight(path)) {
 			xmove = 3;
 			ymove = 0;
-			arrCol ++;
+			if(arrCol < 26)
+				arrCol ++;
 		}
+		else {
+			ymove = 0;
+			xmove = 0;
+		}
+
 		x += xmove;
 		y += ymove;
 	}
 	
 	public boolean canMoveUp(int[][] path) {
-		if (path[arrRow - 1][arrCol] == 5)
+		if (arrRow > 0 && path[arrRow - 1][arrCol] == 5)
 			return false;
 		else {
 			if (arrRow > 0) {
@@ -56,7 +67,7 @@ public class Pacman extends Entity {
 	}
 	
 	public boolean canMoveDown(int[][] path) {
-		if (path[arrRow + 1][arrCol] == 5)
+		if (arrRow < 30 && path[arrRow + 1][arrCol] == 5)
 			return false;
 		else {
 			if (arrRow < 30) {
@@ -69,7 +80,7 @@ public class Pacman extends Entity {
 	}
 	
 	public boolean canMoveLeft(int[][] path) {
-		if (path[arrRow][arrCol - 1] == 5)
+		if ( arrCol > 0 && path[arrRow][arrCol - 1] == 5)
 			return false;
 		else {
 			if (arrCol > 0) {
@@ -82,7 +93,7 @@ public class Pacman extends Entity {
 	}
 	
 	public boolean canMoveRight(int[][] path) {
-		if (path[arrRow][arrCol + 1] == 5)
+		if (arrCol < 26 && path[arrRow][arrCol + 1] == 5)
 			return false;
 		else {
 			if (arrCol < 26) {
@@ -103,6 +114,14 @@ public class Pacman extends Entity {
 	}
 	public int getYmove() {
 		return ymove; 
+	}
+	public void printList(){
+		for (int row = 0; row < path.length; row++) {
+			for (int col = 0; col < path[row].length; col++) {
+				System.out.print(path[row][col]);
+			}
+			System.out.println(x);
+		}	
 	}
 
 }

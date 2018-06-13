@@ -22,6 +22,7 @@ public class Ghost extends Entity{
 	public void tick() {
 		if (player.getX() < x && canMoveUp(path)) {
 			x -= 2;
+			
 
 		}
 		else if (player.getX() > x && canMoveDown(path)) {
@@ -36,24 +37,26 @@ public class Ghost extends Entity{
 			y += 2;
 			
 		}
-		
-		/*if(checkEntityCollision(x, y, Pacman player)){
-            xMove ;
-        }
+		else {
+			x += 0;
+			y += 0;
+		}
+		/*
+		if (player.getX() == x && player.getX() == x
+		        && player.getY() == y && player.getY() == y) {
 
-        if(checkEntityCollision(x, y, Pacman player)){
-            yMove *= -1;
-        }
-
+		    player.setX(1000);
+		}
 		*/
 	}
+	
 	public boolean canMoveUp(int[][] path) {
 		if (path[arrRow - 1][arrCol] == 5)
 			return false;
 		else {
 			if (arrRow > 0) {
 			path[arrRow][arrCol] = 0;
-			path[arrRow - 1][arrCol] = 2;
+			path[arrRow - 1][arrCol] = 3;
 			}
 			return true;
 		}
@@ -65,7 +68,7 @@ public class Ghost extends Entity{
 		else {
 			if (arrRow < 30) {
 			path[arrRow][arrCol] = 0;
-			path[arrRow + 1][arrCol] = 2;
+			path[arrRow + 1][arrCol] = 3;
 			}
 			return true;
 		}
@@ -78,7 +81,7 @@ public class Ghost extends Entity{
 		else {
 			if (arrCol > 0) {
 			path[arrRow][arrCol] = 0;
-			path[arrRow][arrCol - 1] = 2;
+			path[arrRow][arrCol - 1] = 3;
 			}
 			return true;
 		}
@@ -90,7 +93,7 @@ public class Ghost extends Entity{
 		else {
 			if (arrCol < 26) {
 			path[arrRow][arrCol] = 0;
-			path[arrRow][arrCol + 1] = 2;
+			path[arrRow][arrCol + 1] = 3;
 			}
 			return true;
 		}
