@@ -28,7 +28,7 @@ public class Alien extends Entity {
         xMove = Math.sin(tickCounter / 30) * 3;
         tickCounter++;
 
-        if(tickCounter % 60 == 0 && !entityBelow() && rand.nextInt(6) == 3){
+        if(tickCounter % 60 == 0 && !entityBelow() && rand.nextInt(10) == 3){
             entityManager.addEntity(new Laser(handler, x + width / 2, y + height, 4, 10, -5, entityManager));
         }
     }

@@ -13,7 +13,7 @@ public class Ball extends Entity {
     private int counter = 4;
     private int startTick = 0;
     private int totalTicks = 0;
-    private static final int endScore = 10;
+    private static final int endScore = 5;
     private boolean gameWon = false;
     private int timePassed = 0;
     public Ball(Handler handler, float x, float y, int width, Paddle[] paddles) {
