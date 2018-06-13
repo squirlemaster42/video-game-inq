@@ -154,7 +154,6 @@ public class TetrisState extends State {
         if (!collidesAt(pieceOrigin.x + i, pieceOrigin.y, rotation)) {
             pieceOrigin.x += i;
         }
-        handler.getGame().getDisplay().getCanvas().repaint();
     }
 
     // Drops the piece one line or fixes it to the board if it can't drop
